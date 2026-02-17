@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hackathon Cybersécurité — Déploiement SIEM Wazuh avec hardening Ubuntu, Manager, Agent et Dashboard. Abderahmane Chaouche.">
+  <title>Hackathon Cybersécurité — Wazuh SIEM | Abderahmane Chaouche</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AC<span>.</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="skills.html">Compétences</a></li>
+      <li><a href="about.html">Parcours</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Navigation mobile">
+    <a href="index.html">Accueil</a>
+    <a href="projects.html">Projets</a>
+    <a href="skills.html">Compétences</a>
+    <a href="about.html">Parcours</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main id="main-content" class="page-content">
+
+  <!-- ===== CASE STUDY HEADER ===== -->
+  <div class="case-study-header">
+    <div class="container">
+      <a href="projects.html#projects" class="case-study-back">← Retour aux projets</a>
+      <div class="case-study-icon" aria-hidden="true">🔐</div>
+      <h1 style="color:var(--text-primary); margin-bottom:0.5rem;">
+        Hackathon Cybersécurité — Wazuh SIEM
+      </h1>
+      <p style="font-size:1.02rem; max-width:620px;">
+        Déploiement d’un SIEM complet avec hardening Ubuntu, Wazuh Manager, Agent et Dashboard.
+      </p>
+      <div class="case-study-meta">
+        <span>📅 Juin 2025</span>
+        <span>⏱ 2 semaines</span>
+        <span>🏆 Hackathon</span>
+        <span>👤 Rôle : Déploiement &amp; Configuration</span>
+      </div>
+      <div class="badges-row" style="margin-top:1.25rem;">
+        <span class="badge">Wazuh</span>
+        <span class="badge">SIEM</span>
+        <span class="badge badge-neutral">Linux</span>
+        <span class="badge badge-neutral">Ubuntu</span>
+        <span class="badge badge-neutral">Hardening</span>
+        <span class="badge badge-neutral">Fail2Ban</span>
+        <span class="badge badge-neutral">UFW</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CASE STUDY BODY ===== -->
+  <div class="case-study-body">
+    <div class="container">
+      <div class="case-study-layout">
+
+        <!-- MAIN CONTENT -->
+        <div class="case-study-main">
+
+          <div class="case-study-section reveal">
+            <h3>Objectifs</h3>
+            <ul class="case-study-list">
+              <li>Durcir un serveur Ubuntu (AppArmor, auditd, SSH par clé, UFW, Fail2Ban)</li>
+              <li>Installer et configurer Wazuh Manager + Dashboard + Indexer</li>
+              <li>Connecter un agent Wazuh au Manager avec authentification par clé</li>
+              <li>Automatiser la reconnexion de l’agent via un script crontab</li>
+            </ul>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Stack technique</h3>
+            <div style="overflow-x:auto;">
+              <table style="width:100%; border-collapse:collapse; margin-top:0.75rem;">
+                <thead>
+                  <tr style="border-bottom:2px solid var(--border);">
+                    <th style="text-align:left; padding:0.6rem 1rem; color:var(--accent); font-size:0.85rem; font-weight:600;">Couche</th>
+                    <th style="text-align:left; padding:0.6rem 1rem; color:var(--accent); font-size:0.85rem; font-weight:600;">Technologie</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">OS</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">Ubuntu Server 22.04 LTS</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">SIEM</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">Wazuh 4.12.0 (Manager + Indexer + Dashboard)</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Hardening</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">AppArmor, auditd, sysctl</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Pare-feu</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">UFW</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Protection brute-force</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">Fail2Ban</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Authentification</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">SSH par clé RSA 4096 bits</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Automatisation</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">Bash script + crontab</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Architecture</h3>
+            <pre style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; overflow-x:auto; font-size:0.82rem; line-height:1.6; color:var(--accent-light);">
+┌──────────────────────────┐          ┌──────────────────────────┐
+│  Ubuntu Hardened (Agent)  │─1514─▶│  Wazuh Manager + Dashboard│
+│  IP: 192.168.10.10        │          │  IP: 192.168.10.20        │
+└──────────────────────────┘          └──────────────────────────┘</pre>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Ce que j’ai fait — étapes</h3>
+            <ul class="case-study-list">
+              <li>Installé et durci un serveur Ubuntu (AppArmor, auditd, sysctl hardening, SSH par clé, UFW, Fail2Ban)</li>
+              <li>Déployé Wazuh Manager (v4.12.0) avec Dashboard et Indexer sur une VM dédiée</li>
+              <li>Configuré un agent Wazuh sur le serveur durci avec communication chiffrée (port 1514)</li>
+              <li>Mis en place un script d’automatisation de reconnexion avec crontab</li>
+              <li>Assuré la compatibilité des versions Agent/Manager/Dashboard</li>
+              <li>Vérifié les alertes remontées dans le tableau de bord Wazuh</li>
+              <li>Documenté l’ensemble de la procédure sur HackMD</li>
+            </ul>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Compétences démontrées</h3>
+            <ul class="case-study-list">
+              <li>Administration Linux avancée — hardening, services, pare-feu</li>
+              <li>Déploiement et configuration d’un SIEM Wazuh complet</li>
+              <li>Sécurisation SSH — clés RSA, désactivation du root login</li>
+              <li>Automatisation Bash et planification crontab</li>
+              <li>Documentation technique complète</li>
+              <li>Travail en équipe sous contrainte de temps (hackathon)</li>
+            </ul>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Livrables &amp; Documentation</h3>
+            <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:0.5rem;">
+              <a href="https://hackmd.io/@1lZKDAoOSziryswPJhllxg/rykHFp8Qlx"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-primary" style="justify-content:center; font-size:0.88rem;">
+                📄 Guide Installation Ubuntu Server
+              </a>
+              <a href="https://hackmd.io/@1lZKDAoOSziryswPJhllxg/HJ0Cjx_mxl"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-primary" style="justify-content:center; font-size:0.88rem;">
+                📄 Guide Wazuh complet
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="case-study-sidebar">
+          <div class="sidebar-card">
+            <p class="sidebar-card-title">Outils &amp; technos</p>
+            <div class="badges-row">
+              <span class="badge badge-sm">Wazuh Manager</span>
+              <span class="badge badge-sm">Wazuh Agent</span>
+              <span class="badge badge-sm">Wazuh Dashboard</span>
+              <span class="badge badge-sm badge-neutral">Ubuntu Server</span>
+              <span class="badge badge-sm badge-neutral">AppArmor</span>
+              <span class="badge badge-sm badge-neutral">Fail2Ban</span>
+              <span class="badge badge-sm badge-neutral">UFW</span>
+              <span class="badge badge-sm badge-neutral">auditd</span>
+              <span class="badge badge-sm badge-neutral">SSH</span>
+              <span class="badge badge-sm badge-neutral">Bash</span>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <p class="sidebar-card-title">Catégorie</p>
+            <span class="badge">Cybersécurité</span>
+          </div>
+
+          <div class="sidebar-card">
+            <p class="sidebar-card-title">Infos</p>
+            <div style="display:flex;flex-direction:column;gap:0.6rem;">
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">📅 Juin 2025</p>
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">⏱ 2 semaines</p>
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">🏫 Geneva Institute of Technology</p>
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">🏆 Hackathon</p>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <a href="contact.html#contact-form" class="btn btn-primary" style="justify-content:center;">Me contacter</a>
+            <a href="projects.html#projects" class="btn btn-secondary" style="justify-content:center;">← Tous les projets</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="case-study-cta">
+    <div class="container">
+      <h3>Intéressé par mon profil ?</h3>
+      <p>Je recherche une place d’apprentissage pour les 3e et 4e années CFC, dès août 2026.</p>
+      <div class="btn-row">
+        <a href="contact.html#contact-form" class="btn btn-primary">Me contacter</a>
+        <a href="https://www.linkedin.com/in/abderahmane-chaouche"
+           target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn ↗</a>
+        <a href="projects.html#projects" class="btn btn-ghost">← Autres projets</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 Abderahmane Chaouche — Nyon, Suisse</p>
+      <div class="footer-links">
+        <a href="mailto:Abderahmane.chaouche.0@gmail.com" class="btn-icon" aria-label="Email" title="Email">✉</a>
+        <a href="https://www.linkedin.com/in/abderahmane-chaouche"
+           target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn" title="LinkedIn">in</a>
+        <a href="https://abder541.github.io/Portfolio/"
+           target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Pages" title="GitHub Pages">⌨</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page">↑</button>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

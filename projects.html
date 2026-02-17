@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projets d'Abderahmane Chaouche — Hackathon cybersécurité (Wazuh SIEM), infrastructure Azure, e-commerce Luxe Shop (Laravel + React), IoT (Raspberry Pi).">
+  <title>Projets & Hackathons — Abderahmane Chaouche</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AC<span>.</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="skills.html">Compétences</a></li>
+      <li><a href="about.html">Parcours</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Navigation mobile">
+    <a href="index.html">Accueil</a>
+    <a href="projects.html">Projets</a>
+    <a href="skills.html">Compétences</a>
+    <a href="about.html">Parcours</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main id="main-content" class="page-content">
+
+  <!-- ===== PAGE HEADER ===== -->
+  <div class="page-header" id="projects">
+    <div class="container">
+      <span class="section-label">Portfolio</span>
+      <h1 class="section-title" style="margin-top:0.75rem;">Projets &amp; Hackathons</h1>
+      <p class="section-desc">
+        4 projets réalisés — hackathons, projets école et infrastructure cloud. Chaque projet = un objectif concret, des outils réels, un résultat livrable.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== PROJETS ===== -->
+  <section>
+    <div class="container">
+
+      <!-- Filters -->
+      <div class="filters" role="group" aria-label="Filtrer les projets par catégorie">
+        <button class="filter-btn active" data-filter="all">Tous (4)</button>
+        <button class="filter-btn" data-filter="cybersecurite">Cybersécurité</button>
+        <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="iot">IoT</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- ── Wazuh SIEM ── -->
+        <article class="project-card reveal" data-category="cybersecurite">
+          <div class="project-card-icon" style="background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.2);" aria-hidden="true">🔐</div>
+          <div>
+            <h2 class="project-card-title">Hackathon Cybersécurité — Wazuh SIEM</h2>
+            <p class="project-card-context">Juin 2025 &nbsp;·&nbsp; 2 semaines &nbsp;·&nbsp; Hackathon</p>
+          </div>
+          <ul class="project-card-bullets">
+            <li>Installé et durci un serveur Ubuntu (AppArmor, auditd, sysctl hardening, SSH par clé, UFW, Fail2Ban)</li>
+            <li>Déployé Wazuh Manager (v4.12.0) avec Dashboard et Indexer sur une VM dédiée</li>
+            <li>Configuré un agent Wazuh sur le serveur durci avec communication chiffrée (port 1514)</li>
+            <li>Mis en place un script d'automatisation de reconnexion avec crontab</li>
+            <li>Assuré la compatibilité des versions Agent/Manager/Dashboard</li>
+          </ul>
+          <div class="badges-row">
+            <span class="badge badge-sm">Wazuh</span>
+            <span class="badge badge-sm">SIEM</span>
+            <span class="badge badge-sm badge-neutral">Linux</span>
+            <span class="badge badge-sm badge-neutral">Ubuntu</span>
+            <span class="badge badge-sm badge-neutral">Cybersécurité</span>
+            <span class="badge badge-sm badge-neutral">Hardening</span>
+            <span class="badge badge-sm badge-neutral">Fail2Ban</span>
+            <span class="badge badge-sm badge-neutral">UFW</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="project-wazuh.html" class="btn btn-primary" style="font-size:0.82rem;padding:0.5rem 1rem;">Voir le détail</a>
+            <a href="https://hackmd.io/@1lZKDAoOSziryswPJhllxg/rykHFp8Qlx" target="_blank" rel="noopener noreferrer"
+               class="btn btn-ghost" style="font-size:0.82rem;padding:0.5rem 1rem;">📄 Guide Ubuntu</a>
+            <a href="https://hackmd.io/@1lZKDAoOSziryswPJhllxg/HJ0Cjx_mxl" target="_blank" rel="noopener noreferrer"
+               class="btn btn-ghost" style="font-size:0.82rem;padding:0.5rem 1rem;">📄 Guide Wazuh</a>
+          </div>
+        </article>
+
+        <!-- ── Projets Azure ── -->
+        <article class="project-card reveal reveal-delay-1" data-category="infrastructure">
+          <div class="project-card-icon" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.2);" aria-hidden="true">☁️</div>
+          <div>
+            <h2 class="project-card-title">Projets Azure — Infrastructure Cloud</h2>
+            <p class="project-card-context">2025 &nbsp;·&nbsp; Projets école &nbsp;·&nbsp; Infrastructure Cloud</p>
+          </div>
+          <ul class="project-card-bullets">
+            <li>Déployé un site web dynamique PHP connecté à Azure Database for MySQL (Flexible Server)</li>
+            <li>Configuré une VM Ubuntu avec Nginx, PHP-FPM et connexion SSL vers Azure MySQL</li>
+            <li>Mis en place une architecture Bastion : VM publique (jump host) + VM privée isolée (sans IP publique)</li>
+            <li>Configuré Azure Files (partage SMB/CIFS) monté sur les deux VMs</li>
+            <li>Installé un accès bureau à distance (XRDP + XFCE) sur la VM bastion</li>
+            <li>Géré les NSG, pare-feu MySQL, sous-réseaux et transferts SCP entre VMs</li>
+          </ul>
+          <div class="badges-row">
+            <span class="badge badge-sm badge-violet">Azure</span>
+            <span class="badge badge-sm badge-violet">VM</span>
+            <span class="badge badge-sm badge-neutral">MySQL</span>
+            <span class="badge badge-sm badge-neutral">Nginx</span>
+            <span class="badge badge-sm badge-neutral">PHP</span>
+            <span class="badge badge-sm badge-neutral">Bastion</span>
+            <span class="badge badge-sm badge-neutral">NSG</span>
+            <span class="badge badge-sm badge-neutral">Azure Files</span>
+            <span class="badge badge-sm badge-neutral">Cloud</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="project-azure.html" class="btn btn-primary" style="font-size:0.82rem;padding:0.5rem 1rem;">Voir le détail</a>
+            <a href="https://hackmd.io/@1lZKDAoOSziryswPJhllxg/By2bPmLBbe" target="_blank" rel="noopener noreferrer"
+               class="btn btn-ghost" style="font-size:0.82rem;padding:0.5rem 1rem;">📄 Guide Site Web + MySQL</a>
+            <a href="https://hackmd.io/@1lZKDAoOSziryswPJhllxg/r1buwKGr-e" target="_blank" rel="noopener noreferrer"
+               class="btn btn-ghost" style="font-size:0.82rem;padding:0.5rem 1rem;">📄 Guide Bastion</a>
+          </div>
+        </article>
+
+        <!-- ── Luxe Shop ── -->
+        <article class="project-card reveal reveal-delay-2" data-category="web">
+          <div class="project-card-icon" style="background:rgba(6,214,224,0.1);border-color:rgba(6,214,224,0.2);" aria-hidden="true">🛍️</div>
+          <div>
+            <h2 class="project-card-title">Luxe Shop — E-commerce Fullstack</h2>
+            <p class="project-card-context">Février 2026 &nbsp;·&nbsp; Projet école &nbsp;·&nbsp; Développement Fullstack</p>
+          </div>
+          <ul class="project-card-bullets">
+            <li>Développé une boutique en ligne complète avec Laravel 12 (API REST) et React 19 (SPA)</li>
+            <li>Implémenté l'authentification sécurisée par token avec Laravel Sanctum</li>
+            <li>Intégré le paiement en ligne via Stripe Checkout (session, confirmation, webhooks)</li>
+            <li>Conçu un panier persistant côté serveur avec base de données MySQL (6 tables, relations Eloquent)</li>
+            <li>Créé un catalogue de 30 produits / 9 catégories avec filtres, recherche et fiches détaillées</li>
+            <li>Designé un thème sombre luxueux responsive (CSS custom + Google Fonts)</li>
+          </ul>
+          <div class="badges-row">
+            <span class="badge badge-sm badge-cyan">Laravel</span>
+            <span class="badge badge-sm badge-cyan">React</span>
+            <span class="badge badge-sm badge-cyan">Stripe</span>
+            <span class="badge badge-sm badge-neutral">MySQL</span>
+            <span class="badge badge-sm badge-neutral">Sanctum</span>
+            <span class="badge badge-sm badge-neutral">API REST</span>
+            <span class="badge badge-sm badge-neutral">PHP</span>
+            <span class="badge badge-sm badge-neutral">JavaScript</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="project-luxeshop.html" class="btn btn-primary" style="font-size:0.82rem;padding:0.5rem 1rem;">Voir le détail</a>
+            <a href="https://github.com/Abder541/Luxe-Shop" target="_blank" rel="noopener noreferrer"
+               class="btn btn-ghost" style="font-size:0.82rem;padding:0.5rem 1rem;">🔗 GitHub</a>
+            <a href="https://hackmd.io/@1lZKDAoOSziryswPJhllxg/SkjvZ2dv-x" target="_blank" rel="noopener noreferrer"
+               class="btn btn-ghost" style="font-size:0.82rem;padding:0.5rem 1rem;">📄 Documentation</a>
+          </div>
+        </article>
+
+        <!-- ── IoT Raspberry Pi ── -->
+        <article class="project-card reveal" data-category="iot">
+          <div class="project-card-icon" style="background:rgba(16,217,160,0.1);border-color:rgba(16,217,160,0.2);" aria-hidden="true">📡</div>
+          <div>
+            <h2 class="project-card-title">Hackathon IoT — Raspberry Pi + Python</h2>
+            <p class="project-card-context">Mars 2025 &nbsp;·&nbsp; 1 semaine &nbsp;·&nbsp; Hackathon</p>
+          </div>
+          <ul class="project-card-bullets">
+            <li>Développé un prototype IoT — interfaçage capteurs + collecte de données</li>
+            <li>Programmé en Python la logique de traitement et d'affichage des données</li>
+          </ul>
+          <div class="badges-row">
+            <span class="badge badge-sm badge-green">Raspberry Pi</span>
+            <span class="badge badge-sm badge-green">Python</span>
+            <span class="badge badge-sm badge-neutral">IoT</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="project-iot.html" class="btn btn-primary" style="font-size:0.82rem;padding:0.5rem 1rem;">Voir le détail</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section style="background:var(--bg-secondary);border-top:1px solid var(--border);" aria-label="Contact">
+    <div class="container" style="text-align:center;">
+      <div class="reveal">
+        <h2 style="font-size:1.5rem; color:var(--text-primary); margin-bottom:0.5rem;">
+          Intéressé par mon profil ?
+        </h2>
+        <p style="margin-bottom:1.75rem;">
+          Je recherche une place d'apprentissage pour les 3e et 4e années CFC dès août 2026.
+        </p>
+        <div class="btn-row">
+          <a href="contact.html#contact-form" class="btn btn-primary">Me contacter</a>
+          <a href="about.html" class="btn btn-secondary">Mon parcours</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 Abderahmane Chaouche — Nyon, Suisse</p>
+      <div class="footer-links">
+        <a href="mailto:Abderahmane.chaouche.0@gmail.com" class="btn-icon" aria-label="Email" title="Email">✉</a>
+        <a href="https://www.linkedin.com/in/abderahmane-chaouche"
+           target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn" title="LinkedIn">in</a>
+        <a href="https://abder541.github.io/Portfolio/"
+           target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Pages" title="GitHub Pages">⌨</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page">↑</button>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

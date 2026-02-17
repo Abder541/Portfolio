@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projets Azure — Déploiement de sites web et architectures sécurisées sur Microsoft Azure. Abderahmane Chaouche.">
+  <title>Projets Azure — Infrastructure Cloud | Abderahmane Chaouche</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AC<span>.</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="skills.html">Compétences</a></li>
+      <li><a href="about.html">Parcours</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Navigation mobile">
+    <a href="index.html">Accueil</a>
+    <a href="projects.html">Projets</a>
+    <a href="skills.html">Compétences</a>
+    <a href="about.html">Parcours</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main id="main-content" class="page-content">
+
+  <!-- ===== CASE STUDY HEADER ===== -->
+  <div class="case-study-header">
+    <div class="container">
+      <a href="projects.html#projects" class="case-study-back">← Retour aux projets</a>
+      <div class="case-study-icon" aria-hidden="true">☁️</div>
+      <h1 style="color:var(--text-primary); margin-bottom:0.5rem;">
+        Projets Azure — Infrastructure Cloud
+      </h1>
+      <p style="font-size:1.02rem; max-width:620px;">
+        Déploiement de sites web et architectures sécurisées sur Microsoft Azure.
+      </p>
+      <div class="case-study-meta">
+        <span>📅 2025</span>
+        <span>🏫 Projets école</span>
+        <span>☁️ Infrastructure Cloud</span>
+      </div>
+      <div class="badges-row" style="margin-top:1.25rem;">
+        <span class="badge badge-violet">Azure</span>
+        <span class="badge badge-violet">VM</span>
+        <span class="badge badge-neutral">MySQL</span>
+        <span class="badge badge-neutral">Nginx</span>
+        <span class="badge badge-neutral">PHP</span>
+        <span class="badge badge-neutral">Bastion</span>
+        <span class="badge badge-neutral">NSG</span>
+        <span class="badge badge-neutral">Azure Files</span>
+        <span class="badge badge-neutral">Cloud</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CASE STUDY BODY ===== -->
+  <div class="case-study-body">
+    <div class="container">
+      <div class="case-study-layout">
+
+        <!-- MAIN CONTENT -->
+        <div class="case-study-main">
+
+          <!-- Sous-projet A -->
+          <div class="case-study-section reveal">
+            <h3>Sous-projet A — Site Web dynamique connecté à Azure MySQL</h3>
+            <ul class="case-study-list">
+              <li>Déployé une VM Ubuntu avec Nginx + PHP-FPM</li>
+              <li>Connecté à Azure Database for MySQL (Flexible Server) via SSL</li>
+              <li>Développé un dashboard PHP (CRUD) avec Bootstrap 5, Chart.js, protection CSRF</li>
+              <li>Configuré les NSG et règles de pare-feu MySQL</li>
+            </ul>
+          </div>
+
+          <!-- Sous-projet B -->
+          <div class="case-study-section reveal">
+            <h3>Sous-projet B — Architecture Bastion &amp; VM privée</h3>
+            <ul class="case-study-list">
+              <li>VM bastion (IP publique, SSH + RDP) comme seul point d'entrée</li>
+              <li>VM privée (aucune IP publique) accessible uniquement via le bastion</li>
+              <li>Partage Azure Files monté sur les deux VMs (SMB/CIFS + fstab)</li>
+              <li>Sous-réseaux séparés pour la segmentation réseau</li>
+              <li>Bureau à distance XRDP + XFCE</li>
+            </ul>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Stack technique</h3>
+            <div style="overflow-x:auto;">
+              <table style="width:100%; border-collapse:collapse; margin-top:0.75rem;">
+                <thead>
+                  <tr style="border-bottom:2px solid var(--border);">
+                    <th style="text-align:left; padding:0.6rem 1rem; color:var(--accent); font-size:0.85rem; font-weight:600;">Ressource</th>
+                    <th style="text-align:left; padding:0.6rem 1rem; color:var(--accent); font-size:0.85rem; font-weight:600;">Détail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Cloud</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">Microsoft Azure</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">VMs</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">Ubuntu Server 22.04/24.04</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Base de données</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">Azure Database for MySQL (Flexible Server)</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Serveur web</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">Nginx + PHP-FPM</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Stockage</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">Azure Files (SMB/CIFS)</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Réseau</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">VNet, NSG, sous-réseaux, IP publiques</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-primary);">Bureau distant</td>
+                    <td style="padding:0.6rem 1rem; font-size:0.88rem; color:var(--text-secondary);">XRDP + XFCE</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Architecture</h3>
+            <pre style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; overflow-x:auto; font-size:0.82rem; line-height:1.6; color:var(--accent-light);">
+┌──────────┐       ┌─────────────────────────────────────┐
+│  Client  │──────▶│        Réseau Virtuel Azure          │
+└──────────┘       │  ┌────────────┐   ┌────────────┐    │
+                   │  │ vm-bastion │──▶│ vm-private  │    │
+                   │  │ IP publique│   │ IP privée   │    │
+                   │  └─────┬──────┘   └─────┬───────┘    │
+                   │        └──────┬─────────┘            │
+                   │          Azure Files                  │
+                   └─────────────────────────────────────┘</pre>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Compétences démontrées</h3>
+            <ul class="case-study-list">
+              <li>Déploiement et administration de ressources Azure (VMs, MySQL, Files, VNet)</li>
+              <li>Configuration de serveur web Nginx + PHP-FPM sur Linux</li>
+              <li>Architecture réseau sécurisée (Bastion, NSG, sous-réseaux)</li>
+              <li>Connexion SSL à une base de données Azure MySQL</li>
+              <li>Montage de partages fichiers SMB/CIFS avec persistance fstab</li>
+              <li>Bureau à distance Linux (XRDP + XFCE)</li>
+            </ul>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Livrables &amp; Documentation</h3>
+            <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:0.5rem;">
+              <a href="https://hackmd.io/@1lZKDAoOSziryswPJhllxg/By2bPmLBbe"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-primary" style="justify-content:center; font-size:0.88rem;">
+                📄 Guide Site Web + Azure MySQL
+              </a>
+              <a href="https://hackmd.io/@1lZKDAoOSziryswPJhllxg/r1buwKGr-e"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-primary" style="justify-content:center; font-size:0.88rem;">
+                📄 Guide Bastion &amp; VM privée
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="case-study-sidebar">
+          <div class="sidebar-card">
+            <p class="sidebar-card-title">Outils &amp; technos</p>
+            <div class="badges-row">
+              <span class="badge badge-sm badge-violet">Azure</span>
+              <span class="badge badge-sm badge-neutral">Ubuntu Server</span>
+              <span class="badge badge-sm badge-neutral">Nginx</span>
+              <span class="badge badge-sm badge-neutral">PHP-FPM</span>
+              <span class="badge badge-sm badge-neutral">MySQL</span>
+              <span class="badge badge-sm badge-neutral">Azure Files</span>
+              <span class="badge badge-sm badge-neutral">NSG</span>
+              <span class="badge badge-sm badge-neutral">XRDP</span>
+              <span class="badge badge-sm badge-neutral">XFCE</span>
+              <span class="badge badge-sm badge-neutral">SSH</span>
+              <span class="badge badge-sm badge-neutral">SCP</span>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <p class="sidebar-card-title">Catégorie</p>
+            <span class="badge badge-violet">Infrastructure</span>
+          </div>
+
+          <div class="sidebar-card">
+            <p class="sidebar-card-title">Infos</p>
+            <div style="display:flex;flex-direction:column;gap:0.6rem;">
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">📅 2025</p>
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">🏫 Geneva Institute of Technology</p>
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">☁️ Infrastructure Cloud</p>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <a href="contact.html#contact-form" class="btn btn-primary" style="justify-content:center;">Me contacter</a>
+            <a href="projects.html#projects" class="btn btn-secondary" style="justify-content:center;">← Tous les projets</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="case-study-cta">
+    <div class="container">
+      <h3>Intéressé par mon profil ?</h3>
+      <p>Je recherche une place d'apprentissage pour les 3e et 4e années CFC, dès août 2026.</p>
+      <div class="btn-row">
+        <a href="contact.html#contact-form" class="btn btn-primary">Me contacter</a>
+        <a href="https://www.linkedin.com/in/abderahmane-chaouche"
+           target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn ↗</a>
+        <a href="projects.html#projects" class="btn btn-ghost">← Autres projets</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 Abderahmane Chaouche — Nyon, Suisse</p>
+      <div class="footer-links">
+        <a href="mailto:Abderahmane.chaouche.0@gmail.com" class="btn-icon" aria-label="Email" title="Email">✉</a>
+        <a href="https://www.linkedin.com/in/abderahmane-chaouche"
+           target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn" title="LinkedIn">in</a>
+        <a href="https://abder541.github.io/Portfolio/"
+           target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Pages" title="GitHub Pages">⌨</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page">↑</button>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
