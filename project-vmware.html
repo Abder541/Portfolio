@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Administration VMware ESXi — Installation et configuration d'un hyperviseur ESXi, déploiement de VMs Windows Server et Ubuntu. Abderahmane Chaouche.">
+  <title>Administration VMware ESXi | Abderahmane Chaouche</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AC<span>.</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="skills.html">Compétences</a></li>
+      <li><a href="about.html">Parcours</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Navigation mobile">
+    <a href="index.html">Accueil</a>
+    <a href="projects.html">Projets</a>
+    <a href="skills.html">Compétences</a>
+    <a href="about.html">Parcours</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main id="main-content" class="page-content">
+
+  <!-- ===== CASE STUDY HEADER ===== -->
+  <div class="case-study-header">
+    <div class="container">
+      <a href="projects.html#projects" class="case-study-back">&larr; Retour aux projets</a>
+      <div class="case-study-icon" aria-hidden="true">&#9881;</div>
+      <h1 style="color:var(--text-primary); margin-bottom:0.5rem;">
+        Administration VMware ESXi
+      </h1>
+      <p style="font-size:1.02rem; max-width:560px;">
+        Installation et configuration d'un hyperviseur VMware ESXi, puis d&eacute;ploiement et gestion de machines virtuelles Windows Server et Ubuntu.
+      </p>
+      <div class="case-study-meta">
+        <span>&#128197; 2024</span>
+        <span>&#9201; Projet &eacute;cole</span>
+        <span>&#127979; Infrastructure &amp; Virtualisation</span>
+        <span>&#128100; R&ocirc;le : Administration syst&egrave;me</span>
+      </div>
+      <div class="badges-row" style="margin-top:1.25rem;">
+        <span class="badge badge-violet">VMware ESXi</span>
+        <span class="badge badge-neutral">Windows Server</span>
+        <span class="badge badge-neutral">Ubuntu</span>
+        <span class="badge badge-neutral">Virtualisation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CASE STUDY BODY ===== -->
+  <div class="case-study-body">
+    <div class="container">
+      <div class="case-study-layout">
+
+        <!-- MAIN CONTENT -->
+        <div class="case-study-main">
+
+          <div class="case-study-section reveal">
+            <h3>Objectif</h3>
+            <p>
+              Installer et configurer un hyperviseur VMware ESXi sur un serveur physique,
+              puis d&eacute;ployer et administrer plusieurs machines virtuelles (Windows Server, Ubuntu)
+              dans un environnement de lab scolaire.
+            </p>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Contexte</h3>
+            <p>
+              Projet r&eacute;alis&eacute; dans le cadre du CFC au Geneva Institute of Technology.
+              L'objectif p&eacute;dagogique &eacute;tait de ma&icirc;triser les bases de la virtualisation
+              en entreprise : installation d'un hyperviseur bare-metal, cr&eacute;ation de VMs,
+              configuration r&eacute;seau et gestion des ressources.
+            </p>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Stack technique</h3>
+            <table class="case-study-table">
+              <thead><tr><th>Composant</th><th>Technologie</th></tr></thead>
+              <tbody>
+                <tr><td>Hyperviseur</td><td>VMware ESXi 7.x / 8.x</td></tr>
+                <tr><td>Client de gestion</td><td>vSphere Client (Web)</td></tr>
+                <tr><td>VM 1</td><td>Windows Server 2019 / 2022</td></tr>
+                <tr><td>VM 2</td><td>Ubuntu Server 22.04 LTS</td></tr>
+                <tr><td>R&eacute;seau</td><td>vSwitch, Port Groups, VLAN</td></tr>
+                <tr><td>Stockage</td><td>Datastore local (VMFS)</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Ce que j'ai fait &mdash; &eacute;tapes</h3>
+            <ul class="case-study-list">
+              <li>Installation de VMware ESXi sur un serveur physique d&eacute;di&eacute; (boot USB, configuration initiale)</li>
+              <li>Configuration r&eacute;seau de l'hyperviseur : adressage IP statique, vSwitch, port groups</li>
+              <li>Cr&eacute;ation et installation d'une VM Windows Server (allocation CPU, RAM, disque, ISO)</li>
+              <li>Cr&eacute;ation et installation d'une VM Ubuntu Server (partitionnement, SSH, mises &agrave; jour)</li>
+              <li>Configuration des services de base sur chaque VM : AD DS sur Windows Server, serveur web (Apache) sur Ubuntu</li>
+              <li>Administration via vSphere Client : snapshots, monitoring des ressources, gestion des datastores</li>
+              <li>Tests de connectivit&eacute; r&eacute;seau entre les VMs et vers l'ext&eacute;rieur</li>
+            </ul>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>R&eacute;sultat / Livrables</h3>
+            <ul class="case-study-list">
+              <li>Hyperviseur ESXi op&eacute;rationnel avec deux VMs fonctionnelles</li>
+              <li>Windows Server configur&eacute; avec Active Directory Domain Services</li>
+              <li>Ubuntu Server avec serveur web Apache accessible depuis le r&eacute;seau</li>
+              <li>Documentation technique du d&eacute;ploiement (proc&eacute;dure pas &agrave; pas)</li>
+            </ul>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Comp&eacute;tences d&eacute;montr&eacute;es</h3>
+            <ul class="case-study-list">
+              <li>Installation et configuration d'un hyperviseur bare-metal (VMware ESXi)</li>
+              <li>Administration de machines virtuelles : cr&eacute;ation, snapshots, allocation de ressources</li>
+              <li>Configuration r&eacute;seau virtuel : vSwitch, port groups, connectivit&eacute; inter-VM</li>
+              <li>Administration Windows Server : installation, AD DS, gestion de base</li>
+              <li>Administration Linux : Ubuntu Server, SSH, Apache, mises &agrave; jour</li>
+              <li>Utilisation de vSphere Client pour le monitoring et la gestion</li>
+            </ul>
+          </div>
+
+          <div class="case-study-section reveal">
+            <h3>Le&ccedil;ons apprises</h3>
+            <ul class="case-study-list">
+              <li>La virtualisation permet de simuler une infrastructure compl&egrave;te sur un seul serveur &mdash; id&eacute;al pour apprendre</li>
+              <li>La gestion des ressources (RAM, CPU) est critique : une mauvaise allocation d&eacute;grade toutes les VMs</li>
+              <li>Les snapshots sont essentiels pour exp&eacute;rimenter sans risque, mais ne remplacent pas une vraie strat&eacute;gie de backup</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="case-study-sidebar">
+          <div class="sidebar-card">
+            <p class="sidebar-card-title">Outils &amp; technos</p>
+            <div class="badges-row">
+              <span class="badge badge-sm badge-violet">VMware ESXi</span>
+              <span class="badge badge-sm badge-violet">vSphere</span>
+              <span class="badge badge-sm badge-neutral">Windows Server</span>
+              <span class="badge badge-sm badge-neutral">Ubuntu</span>
+              <span class="badge badge-sm badge-neutral">Active Directory</span>
+              <span class="badge badge-sm badge-neutral">Apache</span>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <p class="sidebar-card-title">Cat&eacute;gorie</p>
+            <span class="badge badge-violet">Infrastructure</span>
+          </div>
+
+          <div class="sidebar-card">
+            <p class="sidebar-card-title">Infos</p>
+            <div style="display:flex;flex-direction:column;gap:0.6rem;">
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">&#128197; 2024</p>
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">&#127979; Projet &eacute;cole</p>
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">&#128187; Infrastructure &amp; Virtualisation</p>
+              <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">&#127891; Geneva Institute of Technology</p>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <a href="contact.html#contact-form" class="btn btn-primary" style="justify-content:center;">Me contacter</a>
+            <a href="projects.html#projects" class="btn btn-secondary" style="justify-content:center;">&larr; Tous les projets</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="case-study-cta">
+    <div class="container">
+      <h3>Int&eacute;ress&eacute; par mon profil ?</h3>
+      <p>Je recherche une place d'apprentissage pour les 3e et 4e ann&eacute;es CFC, d&egrave;s ao&ucirc;t 2026.</p>
+      <div class="btn-row">
+        <a href="contact.html#contact-form" class="btn btn-primary">Me contacter</a>
+        <a href="https://www.linkedin.com/in/abderahmane-chaouche"
+           target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn &nearr;</a>
+        <a href="projects.html#projects" class="btn btn-ghost">&larr; Autres projets</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2025 Abderahmane Chaouche &mdash; Nyon, Suisse</p>
+      <div class="footer-links">
+        <a href="mailto:Abderahmane.chaouche.0@gmail.com" class="btn-icon" aria-label="Email" title="Email">&#9993;</a>
+        <a href="https://www.linkedin.com/in/abderahmane-chaouche"
+           target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn" title="LinkedIn">in</a>
+        <a href="https://abder541.github.io/Portfolio/"
+           target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Pages" title="GitHub Pages">&#9000;</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page">&uarr;</button>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
