@@ -361,13 +361,16 @@ section { padding: var(--section-pad); }
 
 /* ---- 19. PROJECT CARDS ---- */
 .projects-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.5rem;
+  display: flex; flex-wrap: wrap; gap: 1.5rem;
+  justify-content: center;
 }
 .project-card {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 1.75rem;
   display: flex; flex-direction: column; gap: 0.9rem;
   transition: all var(--transition-med); text-decoration: none; color: inherit;
+  width: calc((100% - 3rem) / 3);
+  min-width: 0;
 }
 .project-card:hover {
   background: var(--bg-card-hover); border-color: var(--border-hover);
@@ -607,12 +610,13 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
   .contact-grid { grid-template-columns: 1fr; }
   .case-study-layout { grid-template-columns: 1fr; }
   .case-study-sidebar { position: static; }
+  .project-card { width: calc((100% - 1.5rem) / 2); }
 }
 @media (max-width: 700px) {
   .nav-links { display: none; }
   .nav-burger { display: flex; }
   .hero-photo, .hero-photo-placeholder { width: 165px; height: 165px; }
-  .projects-grid { grid-template-columns: 1fr; }
+  .project-card { width: 100%; }
   :root { --section-pad: 3.5rem 0; }
   .footer-inner { flex-direction: column; text-align: center; }
 }
