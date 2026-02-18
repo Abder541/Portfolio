@@ -570,6 +570,53 @@ section { padding: var(--section-pad); }
 }
 .form-error { color: #ff6b6b; font-size: 0.83rem; margin-top: 0.4rem; }
 
+/* ---- 23b. MOBILITY MAP ---- */
+.mobility-card { padding-bottom: 1.25rem; }
+.mobility-map {
+  width: 100%; max-width: 400px; margin: 0 auto; display: block;
+  height: auto;
+}
+.mobility-map .lake {
+  fill: rgba(79, 142, 247, 0.10); stroke: rgba(79, 142, 247, 0.25);
+  stroke-width: 1.2;
+}
+.mobility-map .mobility-zone {
+  fill: rgba(16, 217, 160, 0.08); stroke: var(--accent-green);
+  stroke-width: 1.5; stroke-dasharray: 6 3; opacity: 0.7;
+}
+.mobility-map .shore-line {
+  fill: none; stroke: var(--border-hover); stroke-width: 1.2;
+  stroke-dasharray: 3 4; opacity: 0.5;
+}
+.mobility-map .city-dot {
+  fill: var(--accent); stroke: var(--bg-card); stroke-width: 2;
+}
+.mobility-map .city-home {
+  fill: var(--accent-green); stroke: var(--bg-card); stroke-width: 2.5;
+}
+.mobility-map .city-label {
+  fill: var(--text-secondary); font-size: 11px; font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+.mobility-map .city-label-home {
+  fill: var(--accent-green); font-weight: 700; font-size: 12px;
+}
+.mobility-map .city-pulse {
+  fill: none; stroke: var(--accent-green); stroke-width: 2;
+  animation: mapPulse 2.2s infinite;
+}
+@keyframes mapPulse {
+  0%   { r: 7;  opacity: 0.7; }
+  100% { r: 18; opacity: 0; }
+}
+.mobility-map .legend-bg {
+  fill: var(--bg-card); stroke: var(--border); stroke-width: 0.8;
+}
+.mobility-map .legend-text {
+  fill: var(--text-muted); font-size: 10px; font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
 /* ---- 24. DISPO ENCART ---- */
 .dispo-encart {
   background: rgba(16,217,160,0.055); border: 1px solid rgba(16,217,160,0.22);

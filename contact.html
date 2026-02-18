@@ -121,11 +121,49 @@
             </div>
           </a>
 
-          <!-- Localisation -->
-          <div class="card" style="margin-top:0.5rem;">
-            <h3 style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:0.75rem;" data-fr="Localisation" data-en="Location">Localisation</h3>
-            <p style="font-size:0.9rem; color:var(--text-primary); font-weight:500; margin-bottom:0.25rem;" data-fr=" Nyon, Vaud, Suisse" data-en=" Nyon, Vaud, Switzerland"> Nyon, Vaud, Suisse</p>
-            <p style="font-size:0.83rem; color:var(--text-muted);" data-fr="Mobilité : région genevoise (Genève, Nyon, Lausanne, Gland, Rolle)" data-en="Mobility: Geneva area (Geneva, Nyon, Lausanne, Gland, Rolle)">Mobilité : région genevoise (Genève, Nyon, Lausanne, Gland, Rolle)</p>
+          <!-- Localisation — Carte interactive -->
+          <div class="card mobility-card" style="margin-top:0.5rem;">
+            <h3 style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:0.75rem;" data-fr="Zone de mobilité" data-en="Mobility Zone">Zone de mobilité</h3>
+
+            <svg class="mobility-map" viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte de mobilité — Genève, Nyon, Gland, Rolle, Lausanne">
+              <!-- Lac Léman (forme simplifiée) -->
+              <path class="lake" d="M 30 165 Q 60 120, 130 110 Q 200 95, 270 105 Q 330 115, 370 140 Q 390 155, 380 175 Q 365 200, 310 210 Q 250 225, 180 215 Q 110 205, 60 190 Q 35 182, 30 165 Z" />
+
+              <!-- Zone de mobilité (highlight) -->
+              <ellipse class="mobility-zone" cx="210" cy="140" rx="175" ry="85" />
+
+              <!-- Rive (trait de côte nord — route des villes) -->
+              <path class="shore-line" d="M 70 148 Q 130 105, 200 98 Q 270 92, 350 120" />
+
+              <!-- Villes -->
+              <!-- Genève -->
+              <circle class="city-dot" cx="70" cy="148" r="5" />
+              <text class="city-label" x="70" y="138" text-anchor="middle" data-fr="Genève" data-en="Geneva">Genève</text>
+
+              <!-- Nyon (base) -->
+              <circle class="city-dot city-home" cx="155" cy="108" r="7" />
+              <text class="city-label city-label-home" x="155" y="94" text-anchor="middle">Nyon</text>
+              <circle class="city-pulse" cx="155" cy="108" r="7" />
+
+              <!-- Gland -->
+              <circle class="city-dot" cx="195" cy="100" r="4" />
+              <text class="city-label" x="195" y="88" text-anchor="middle">Gland</text>
+
+              <!-- Rolle -->
+              <circle class="city-dot" cx="235" cy="96" r="4" />
+              <text class="city-label" x="235" y="84" text-anchor="middle">Rolle</text>
+
+              <!-- Lausanne -->
+              <circle class="city-dot" cx="310" cy="108" r="5" />
+              <text class="city-label" x="310" y="96" text-anchor="middle">Lausanne</text>
+
+              <!-- Légende -->
+              <rect class="legend-bg" x="12" y="225" width="135" height="24" rx="4" />
+              <circle cx="24" cy="237" r="4" fill="var(--accent-green)" opacity="0.7" />
+              <text class="legend-text" x="34" y="241" data-fr="Zone de mobilité" data-en="Mobility zone">Zone de mobilité</text>
+            </svg>
+
+            <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.75rem; text-align:center;" data-fr="📍 Basé à Nyon — Mobile sur toute la région lémanique" data-en="📍 Based in Nyon — Mobile across the Lake Geneva region">📍 Basé à Nyon — Mobile sur toute la région lémanique</p>
           </div>
         </div>
 
