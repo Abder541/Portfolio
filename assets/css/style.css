@@ -576,13 +576,6 @@ section { padding: var(--section-pad); }
   width: 100%; max-width: 420px; margin: 0 auto; display: block;
   height: auto; border-radius: var(--radius);
 }
-/* Background */
-.mobility-map .map-bg {
-  fill: #111827;
-}
-[data-theme="light"] .mobility-map .map-bg {
-  fill: #e8ecf4;
-}
 /* Lac */
 .mobility-map .lake {
   fill: rgba(79, 142, 247, 0.18); stroke: rgba(79, 142, 247, 0.45);
