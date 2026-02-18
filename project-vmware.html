@@ -18,23 +18,24 @@
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">AC<span>.</span></a>
     <ul class="nav-links" role="list">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="skills.html">Compétences</a></li>
-      <li><a href="about.html">Parcours</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+      <li><a href="projects.html" data-fr="Projets" data-en="Projects">Projets</a></li>
+      <li><a href="skills.html" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+      <li><a href="about.html" data-fr="Parcours" data-en="About">Parcours</a></li>
+      <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
     </ul>
     <button class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu">
       <span></span><span></span><span></span>
     </button>
     <button class="theme-toggle" id="theme-toggle" aria-label="Changer le theme">☀️</button>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch to English">FR</button>
   </div>
   <div class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Navigation mobile">
-    <a href="index.html">Accueil</a>
-    <a href="projects.html">Projets</a>
-    <a href="skills.html">Compétences</a>
-    <a href="about.html">Parcours</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="projects.html" data-fr="Projets" data-en="Projects">Projets</a>
+    <a href="skills.html" data-fr="Compétences" data-en="Skills">Compétences</a>
+    <a href="about.html" data-fr="Parcours" data-en="About">Parcours</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
   </div>
 </nav>
 
@@ -43,7 +44,7 @@
   <!-- ===== CASE STUDY HEADER ===== -->
   <div class="case-study-header">
     <div class="container">
-      <a href="projects.html#projects" class="case-study-back">&larr; Retour aux projets</a>
+      <a href="projects.html#projects" class="case-study-back" data-fr="← Retour aux projets" data-en="← Back to projects">&larr; Retour aux projets</a>
       <div class="case-study-icon" aria-hidden="true">&#9881;</div>
       <h1 style="color:var(--text-primary); margin-bottom:0.5rem;">
         Administration VMware ESXi
@@ -75,7 +76,7 @@
         <div class="case-study-main">
 
           <div class="case-study-section reveal">
-            <h3>Objectif</h3>
+            <h3 data-fr="Objectif" data-en="Objective">Objectif</h3>
             <p>
               Installer et configurer un hyperviseur VMware ESXi sur un serveur physique,
               puis d&eacute;ployer et administrer plusieurs machines virtuelles (Windows Server, Ubuntu)
@@ -84,7 +85,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Contexte</h3>
+            <h3 data-fr="Contexte" data-en="Context">Contexte</h3>
             <p>
               Projet r&eacute;alis&eacute; dans le cadre du CFC au Geneva Institute of Technology.
               L'objectif p&eacute;dagogique &eacute;tait de ma&icirc;triser les bases de la virtualisation
@@ -94,7 +95,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Stack technique</h3>
+            <h3 data-fr="Stack technique" data-en="Tech Stack">Stack technique</h3>
             <table class="case-study-table">
               <thead><tr><th>Composant</th><th>Technologie</th></tr></thead>
               <tbody>
@@ -109,7 +110,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Ce que j'ai fait &mdash; &eacute;tapes</h3>
+            <h3 data-fr="Ce que j'ai fait — étapes" data-en="What I did — steps">Ce que j'ai fait &mdash; &eacute;tapes</h3>
             <ul class="case-study-list">
               <li>Installation de VMware ESXi sur un serveur physique d&eacute;di&eacute; (boot USB, configuration initiale)</li>
               <li>Configuration r&eacute;seau de l'hyperviseur : adressage IP statique, vSwitch, port groups</li>
@@ -122,7 +123,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>R&eacute;sultat / Livrables</h3>
+            <h3 data-fr="Résultat / Livrables" data-en="Results / Deliverables">R&eacute;sultat / Livrables</h3>
             <ul class="case-study-list">
               <li>Hyperviseur ESXi op&eacute;rationnel avec deux VMs fonctionnelles</li>
               <li>Windows Server configur&eacute; avec Active Directory Domain Services</li>
@@ -132,7 +133,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Comp&eacute;tences d&eacute;montr&eacute;es</h3>
+            <h3 data-fr="Compétences démontrées" data-en="Skills demonstrated">Comp&eacute;tences d&eacute;montr&eacute;es</h3>
             <ul class="case-study-list">
               <li>Installation et configuration d'un hyperviseur bare-metal (VMware ESXi)</li>
               <li>Administration de machines virtuelles : cr&eacute;ation, snapshots, allocation de ressources</li>
@@ -144,7 +145,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Le&ccedil;ons apprises</h3>
+            <h3 data-fr="Leçons apprises" data-en="Lessons learned">Le&ccedil;ons apprises</h3>
             <ul class="case-study-list">
               <li>La virtualisation permet de simuler une infrastructure compl&egrave;te sur un seul serveur &mdash; id&eacute;al pour apprendre</li>
               <li>La gestion des ressources (RAM, CPU) est critique : une mauvaise allocation d&eacute;grade toutes les VMs</li>
@@ -157,7 +158,7 @@
         <!-- SIDEBAR -->
         <aside class="case-study-sidebar">
           <div class="sidebar-card">
-            <p class="sidebar-card-title">Outils &amp; technos</p>
+            <p class="sidebar-card-title" data-fr="Outils & technos" data-en="Tools & Technologies">Outils &amp; technos</p>
             <div class="badges-row">
               <span class="badge badge-sm badge-violet">VMware ESXi</span>
               <span class="badge badge-sm badge-violet">vSphere</span>
@@ -169,12 +170,12 @@
           </div>
 
           <div class="sidebar-card">
-            <p class="sidebar-card-title">Cat&eacute;gorie</p>
+            <p class="sidebar-card-title" data-fr="Catégorie" data-en="Category">Cat&eacute;gorie</p>
             <span class="badge badge-violet">Infrastructure</span>
           </div>
 
           <div class="sidebar-card">
-            <p class="sidebar-card-title">Infos</p>
+            <p class="sidebar-card-title" data-fr="Infos" data-en="Info">Infos</p>
             <div style="display:flex;flex-direction:column;gap:0.6rem;">
               <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">&#128197; 2024</p>
               <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">&#127979; Projet &eacute;cole</p>
@@ -184,8 +185,8 @@
           </div>
 
           <div style="display:flex;flex-direction:column;gap:0.5rem;">
-            <a href="contact.html#contact-form" class="btn btn-primary" style="justify-content:center;">Me contacter</a>
-            <a href="projects.html#projects" class="btn btn-secondary" style="justify-content:center;">&larr; Tous les projets</a>
+            <a href="contact.html#contact-form" class="btn btn-primary" style="justify-content:center;" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+            <a href="projects.html#projects" class="btn btn-secondary" style="justify-content:center;" data-fr="← Tous les projets" data-en="← All projects">&larr; Tous les projets</a>
           </div>
         </aside>
 
@@ -196,13 +197,13 @@
   <!-- ===== CTA ===== -->
   <div class="case-study-cta">
     <div class="container">
-      <h3>Int&eacute;ress&eacute; par mon profil ?</h3>
+      <h3 data-fr="Intéressé par mon profil ?" data-en="Interested in my profile?">Int&eacute;ress&eacute; par mon profil ?</h3>
       <p>Je recherche une place d'apprentissage pour les 3e et 4e ann&eacute;es CFC, d&egrave;s ao&ucirc;t 2026.</p>
       <div class="btn-row">
-        <a href="contact.html#contact-form" class="btn btn-primary">Me contacter</a>
+        <a href="contact.html#contact-form" class="btn btn-primary" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
         <a href="https://www.linkedin.com/in/abderahmane-chaouche"
            target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn &nearr;</a>
-        <a href="projects.html#projects" class="btn btn-ghost">&larr; Autres projets</a>
+        <a href="projects.html#projects" class="btn btn-ghost" data-fr="← Autres projets" data-en="← Other projects">&larr; Autres projets</a>
       </div>
     </div>
   </div>
@@ -212,7 +213,7 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <p class="footer-copy">&copy; 2025 Abderahmane Chaouche &mdash; Nyon, Suisse</p>
+      <p class="footer-copy" data-fr="© 2025 Abderahmane Chaouche — Nyon, Suisse" data-en="© 2025 Abderahmane Chaouche — Nyon, Switzerland">&copy; 2025 Abderahmane Chaouche &mdash; Nyon, Suisse</p>
       <div class="footer-links">
         <a href="mailto:Abderahmane.chaouche.0@gmail.com" class="btn-icon" aria-label="Email" title="Email">&#9993;</a>
         <a href="https://www.linkedin.com/in/abderahmane-chaouche"
@@ -225,6 +226,7 @@
 </footer>
 
 <button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page">&uarr;</button>
+<script src="assets/js/lang.js"></script>
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

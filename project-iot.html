@@ -18,23 +18,24 @@
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">AC<span>.</span></a>
     <ul class="nav-links" role="list">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="skills.html">Compétences</a></li>
-      <li><a href="about.html">Parcours</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+      <li><a href="projects.html" data-fr="Projets" data-en="Projects">Projets</a></li>
+      <li><a href="skills.html" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+      <li><a href="about.html" data-fr="Parcours" data-en="About">Parcours</a></li>
+      <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
     </ul>
     <button class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu">
       <span></span><span></span><span></span>
     </button>
     <button class="theme-toggle" id="theme-toggle" aria-label="Changer le theme">☀️</button>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch to English">FR</button>
   </div>
   <div class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Navigation mobile">
-    <a href="index.html">Accueil</a>
-    <a href="projects.html">Projets</a>
-    <a href="skills.html">Compétences</a>
-    <a href="about.html">Parcours</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="projects.html" data-fr="Projets" data-en="Projects">Projets</a>
+    <a href="skills.html" data-fr="Compétences" data-en="Skills">Compétences</a>
+    <a href="about.html" data-fr="Parcours" data-en="About">Parcours</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
   </div>
 </nav>
 
@@ -43,7 +44,7 @@
   <!-- ===== CASE STUDY HEADER ===== -->
   <div class="case-study-header">
     <div class="container">
-      <a href="projects.html#projects" class="case-study-back">← Retour aux projets</a>
+      <a href="projects.html#projects" class="case-study-back" data-fr="← Retour aux projets" data-en="← Back to projects">← Retour aux projets</a>
       <div class="case-study-icon" aria-hidden="true">📡</div>
       <h1 style="color:var(--text-primary); margin-bottom:0.5rem;">
         Hackathon IoT — Raspberry Pi + Python
@@ -75,7 +76,7 @@
         <div class="case-study-main">
 
           <div class="case-study-section reveal">
-            <h3>Objectif</h3>
+            <h3 data-fr="Objectif" data-en="Objective">Objectif</h3>
             <p>
               Développer un prototype IoT fonctionnel en une semaine : connecter des capteurs physiques à un Raspberry Pi,
               collecter les données en temps réel, les traiter en Python et les afficher de manière lisible.
@@ -83,7 +84,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Contexte</h3>
+            <h3 data-fr="Contexte" data-en="Context">Contexte</h3>
             <p>
               Hackathon organisé dans le cadre du CFC au Geneva Institute of Technology.
               Durée d'une semaine en conditions intensives. Travail en équipe avec un Raspberry Pi physique et des capteurs.
@@ -92,7 +93,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Mon rôle</h3>
+            <h3 data-fr="Mon rôle" data-en="My role">Mon rôle</h3>
             <p>
               Interfaçage hardware (connexion capteurs au Raspberry Pi via GPIO), développement de la logique Python
               pour la collecte et le traitement des données, et implémentation de l'affichage des résultats.
@@ -100,7 +101,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Ce que j'ai fait — étapes</h3>
+            <h3 data-fr="Ce que j'ai fait — étapes" data-en="What I did — steps">Ce que j'ai fait — étapes</h3>
             <ul class="case-study-list">
               <li>Configuration du Raspberry Pi (OS Raspberry Pi OS, SSH, réseau)</li>
               <li>Connexion des capteurs sur les broches GPIO du Raspberry Pi</li>
@@ -113,7 +114,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Résultat / Livrables</h3>
+            <h3 data-fr="Résultat / Livrables" data-en="Results / Deliverables">Résultat / Livrables</h3>
             <ul class="case-study-list">
               <li>Prototype IoT fonctionnel : lecture de capteur → traitement → affichage</li>
               <li>Script Python propre et commenté pour la collecte de données</li>
@@ -122,7 +123,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Compétences démontrées</h3>
+            <h3 data-fr="Compétences démontrées" data-en="Skills demonstrated">Compétences démontrées</h3>
             <ul class="case-study-list">
               <li>Programmation Python — lecture GPIO, boucles, traitement de données, gestion d'erreurs</li>
               <li>Utilisation d'un Raspberry Pi en conditions réelles (hardware + software)</li>
@@ -133,7 +134,7 @@
           </div>
 
           <div class="case-study-section reveal">
-            <h3>Leçons apprises</h3>
+            <h3 data-fr="Leçons apprises" data-en="Lessons learned">Leçons apprises</h3>
             <ul class="case-study-list">
               <li>L'interfaçage hardware demande de la patience — câblage et polarité sont critiques</li>
               <li>La gestion des exceptions Python est indispensable pour un système IoT stable (capteur déconnecté, valeur aberrante)</li>
@@ -146,7 +147,7 @@
         <!-- SIDEBAR -->
         <aside class="case-study-sidebar">
           <div class="sidebar-card">
-            <p class="sidebar-card-title">Outils &amp; technos</p>
+            <p class="sidebar-card-title" data-fr="Outils & technos" data-en="Tools & Technologies">Outils &amp; technos</p>
             <div class="badges-row">
               <span class="badge badge-sm badge-green">Raspberry Pi</span>
               <span class="badge badge-sm badge-green">Python</span>
@@ -158,12 +159,12 @@
           </div>
 
           <div class="sidebar-card">
-            <p class="sidebar-card-title">Catégorie</p>
+            <p class="sidebar-card-title" data-fr="Catégorie" data-en="Category">Catégorie</p>
             <span class="badge badge-green">IoT</span>
           </div>
 
           <div class="sidebar-card">
-            <p class="sidebar-card-title">Infos</p>
+            <p class="sidebar-card-title" data-fr="Infos" data-en="Info">Infos</p>
             <div style="display:flex;flex-direction:column;gap:0.6rem;">
               <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">📅 Mars 2025</p>
               <p style="font-size:0.83rem; color:var(--text-secondary); margin:0;">⏱ 1 semaine</p>
@@ -173,8 +174,8 @@
           </div>
 
           <div style="display:flex;flex-direction:column;gap:0.5rem;">
-            <a href="contact.html#contact-form" class="btn btn-primary" style="justify-content:center;">Me contacter</a>
-            <a href="projects.html#projects" class="btn btn-secondary" style="justify-content:center;">← Tous les projets</a>
+            <a href="contact.html#contact-form" class="btn btn-primary" style="justify-content:center;" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+            <a href="projects.html#projects" class="btn btn-secondary" style="justify-content:center;" data-fr="← Tous les projets" data-en="← All projects">← Tous les projets</a>
           </div>
         </aside>
 
@@ -185,13 +186,13 @@
   <!-- ===== CTA ===== -->
   <div class="case-study-cta">
     <div class="container">
-      <h3>Intéressé par mon profil ?</h3>
+      <h3 data-fr="Intéressé par mon profil ?" data-en="Interested in my profile?">Intéressé par mon profil ?</h3>
       <p>Je recherche une place d'apprentissage pour les 3e et 4e années CFC, dès août 2026.</p>
       <div class="btn-row">
-        <a href="contact.html#contact-form" class="btn btn-primary">Me contacter</a>
+        <a href="contact.html#contact-form" class="btn btn-primary" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
         <a href="https://www.linkedin.com/in/abderahmane-chaouche"
            target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn ↗</a>
-        <a href="projects.html#projects" class="btn btn-ghost">← Autres projets</a>
+        <a href="projects.html#projects" class="btn btn-ghost" data-fr="← Autres projets" data-en="← Other projects">← Autres projets</a>
       </div>
     </div>
   </div>
@@ -201,7 +202,7 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <p class="footer-copy">© 2025 Abderahmane Chaouche — Nyon, Suisse</p>
+      <p class="footer-copy" data-fr="© 2025 Abderahmane Chaouche — Nyon, Suisse" data-en="© 2025 Abderahmane Chaouche — Nyon, Switzerland">© 2025 Abderahmane Chaouche — Nyon, Suisse</p>
       <div class="footer-links">
         <a href="mailto:Abderahmane.chaouche.0@gmail.com" class="btn-icon" aria-label="Email" title="Email">✉</a>
         <a href="https://www.linkedin.com/in/abderahmane-chaouche"
@@ -214,6 +215,7 @@
 </footer>
 
 <button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page">↑</button>
+<script src="assets/js/lang.js"></script>
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

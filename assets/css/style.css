@@ -163,6 +163,14 @@ strong { color: var(--text-primary); font-weight: 600; }
 }
 .theme-toggle:hover { border-color: var(--border-hover); color: var(--text-primary); }
 
+.lang-toggle {
+  background: none; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  cursor: pointer; font-size: 0.78rem; font-weight: 700; font-family: inherit;
+  padding: 0.32rem 0.6rem; margin-left: 0.35rem; letter-spacing: 0.04em;
+  color: var(--text-secondary); transition: all var(--transition);
+}
+.lang-toggle:hover { border-color: var(--border-hover); color: var(--text-primary); }
+
 .nav-mobile {
   display: none; position: fixed;
   top: var(--nav-height); left: 0; right: 0;

@@ -18,23 +18,24 @@
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">AC<span>.</span></a>
     <ul class="nav-links" role="list">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="skills.html">Compétences</a></li>
-      <li><a href="about.html">Parcours</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+      <li><a href="projects.html" data-fr="Projets" data-en="Projects">Projets</a></li>
+      <li><a href="skills.html" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+      <li><a href="about.html" data-fr="Parcours" data-en="About">Parcours</a></li>
+      <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
     </ul>
     <button class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu">
       <span></span><span></span><span></span>
     </button>
     <button class="theme-toggle" id="theme-toggle" aria-label="Changer le theme">☀️</button>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch to English">FR</button>
   </div>
   <div class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Navigation mobile">
-    <a href="index.html">Accueil</a>
-    <a href="projects.html">Projets</a>
-    <a href="skills.html">Compétences</a>
-    <a href="about.html">Parcours</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="projects.html" data-fr="Projets" data-en="Projects">Projets</a>
+    <a href="skills.html" data-fr="Compétences" data-en="Skills">Compétences</a>
+    <a href="about.html" data-fr="Parcours" data-en="About">Parcours</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
   </div>
 </nav>
 
@@ -288,7 +289,7 @@
         </h2>
         <p style="margin-bottom:1.75rem;">Disponible dès août 2026 — Nyon, région genevoise.</p>
         <div class="btn-row">
-          <a href="contact.html#contact-form" class="btn btn-primary">Me contacter</a>
+          <a href="contact.html#contact-form" class="btn btn-primary" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
           <a href="projects.html#projects" class="btn btn-secondary">Voir mes projets</a>
         </div>
       </div>
@@ -300,7 +301,7 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <p class="footer-copy">© 2025 Abderahmane Chaouche — Nyon, Suisse</p>
+      <p class="footer-copy" data-fr="© 2025 Abderahmane Chaouche — Nyon, Suisse" data-en="© 2025 Abderahmane Chaouche — Nyon, Switzerland">© 2025 Abderahmane Chaouche — Nyon, Suisse</p>
       <div class="footer-links">
         <a href="mailto:Abderahmane.chaouche.0@gmail.com" class="btn-icon" aria-label="Email" title="Email">✉</a>
         <a href="https://www.linkedin.com/in/abderahmane-chaouche"
@@ -313,6 +314,7 @@
 </footer>
 
 <button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page">↑</button>
+<script src="assets/js/lang.js"></script>
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/main.js"></script>
 
