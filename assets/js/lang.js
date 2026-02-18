@@ -26,6 +26,9 @@
     }
     /* Update <html lang> */
     document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('data-lang', lang);
+    /* Notify other scripts */
+    window.dispatchEvent(new CustomEvent('langChanged', { detail: { lang: lang } }));
   }
 
   function toggle() {

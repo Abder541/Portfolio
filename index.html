@@ -52,6 +52,17 @@
             Disponible dès août 2026 — 3e année CFC
           </div>
 
+          <!-- Terminal interactif -->
+          <div class="terminal" id="hero-terminal" aria-label="Terminal de présentation" role="region">
+            <div class="terminal-bar">
+              <span class="terminal-dot" style="background:#ff5f57"></span>
+              <span class="terminal-dot" style="background:#febc2e"></span>
+              <span class="terminal-dot" style="background:#28c840"></span>
+              <span class="terminal-bar-title">terminal — portfolio</span>
+            </div>
+            <div class="terminal-body"></div>
+          </div>
+
           <h1 class="hero-name" id="hero-name">
             Abderahmane<br>Chaouche
           </h1>
@@ -73,6 +84,7 @@
           <div class="hero-actions">
             <a href="projects.html#projects" class="btn btn-primary" data-fr="Voir mes projets" data-en="View my projects">Voir mes projets</a>
             <a href="contact.html#contact-form" class="btn btn-secondary" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+            <a href="assets/docs/CV-Abderahmane-Chaouche.pdf" download class="btn btn-ghost" data-fr="Télécharger mon CV" data-en="Download my CV"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Télécharger mon CV</a>
             <div class="hero-socials">
               <a href="mailto:Abderahmane.chaouche.0@gmail.com" class="btn-icon"
                  aria-label="Envoyer un email" title="Email">✉</a>
@@ -106,19 +118,19 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat-item reveal">
-          <span class="stat-number">4</span>
+          <span class="stat-number" data-count="4" data-suffix="+">0</span>
           <span class="stat-label" data-fr="Hackathons complétés" data-en="Hackathons completed">Hackathons complétés</span>
         </div>
         <div class="stat-item reveal reveal-delay-1">
-          <span class="stat-number">2e</span>
+          <span class="stat-number" data-count="2" data-suffix="e">0</span>
           <span class="stat-label" data-fr="Année de CFC en cours" data-en="Current apprenticeship year">Année de CFC en cours</span>
         </div>
         <div class="stat-item reveal reveal-delay-2">
-          <span class="stat-number">ESXi</span>
+          <span class="stat-number" data-text="ESXi">ESXi</span>
           <span class="stat-label" data-fr="Lab VMware opérationnel" data-en="VMware lab operational">Lab VMware opérationnel</span>
         </div>
         <div class="stat-item reveal reveal-delay-3">
-          <span class="stat-number">SIEM</span>
+          <span class="stat-number" data-text="SIEM">SIEM</span>
           <span class="stat-label" data-fr="Wazuh déployé en lab" data-en="Wazuh deployed in lab">Wazuh déployé en lab</span>
         </div>
       </div>
@@ -315,5 +327,6 @@
 <script src="assets/js/lang.js"></script>
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/terminal.js"></script>
 </body>
 </html>
