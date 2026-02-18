@@ -607,7 +607,6 @@ section { padding: var(--section-pad); }
   font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.9rem;
 }
-.case-study-main {}
 .case-study-section { margin-bottom: 2.5rem; }
 .case-study-section h3 {
   font-size: 1rem; color: var(--text-primary); margin-bottom: 0.9rem;
