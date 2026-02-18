@@ -125,42 +125,47 @@
           <div class="card mobility-card" style="margin-top:0.5rem;">
             <h3 style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:0.75rem;" data-fr="Zone de mobilité" data-en="Mobility Zone">Zone de mobilité</h3>
 
-            <svg class="mobility-map" viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte de mobilité — Genève, Nyon, Gland, Rolle, Lausanne">
-              <!-- Lac Léman (forme simplifiée) -->
-              <path class="lake" d="M 30 165 Q 60 120, 130 110 Q 200 95, 270 105 Q 330 115, 370 140 Q 390 155, 380 175 Q 365 200, 310 210 Q 250 225, 180 215 Q 110 205, 60 190 Q 35 182, 30 165 Z" />
+            <svg class="mobility-map" viewBox="0 0 440 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte de mobilité — Genève, Nyon, Gland, Rolle, Lausanne">
+              <!-- Background -->
+              <rect class="map-bg" x="0" y="0" width="440" height="280" rx="10" />
 
-              <!-- Zone de mobilité (highlight) -->
-              <ellipse class="mobility-zone" cx="210" cy="140" rx="175" ry="85" />
+              <!-- Zone de mobilité (highlight - derrière le lac) -->
+              <ellipse class="mobility-zone" cx="215" cy="148" rx="185" ry="80" />
 
-              <!-- Rive (trait de côte nord — route des villes) -->
-              <path class="shore-line" d="M 70 148 Q 130 105, 200 98 Q 270 92, 350 120" />
+              <!-- Lac Léman -->
+              <path class="lake" d="M 40 170 Q 70 125, 140 115 Q 210 100, 280 110 Q 340 120, 380 145 Q 400 158, 390 178 Q 375 205, 320 215 Q 260 228, 190 220 Q 120 210, 70 195 Q 45 187, 40 170 Z" />
 
-              <!-- Villes -->
-              <!-- Genève -->
-              <circle class="city-dot" cx="70" cy="148" r="5" />
-              <text class="city-label" x="70" y="138" text-anchor="middle" data-fr="Genève" data-en="Geneva">Genève</text>
+              <!-- Rive nord (trait de côte) -->
+              <path class="shore-line" d="M 75 155 Q 140 108, 210 100 Q 280 94, 365 125" />
 
-              <!-- Nyon (base) -->
-              <circle class="city-dot city-home" cx="155" cy="108" r="7" />
-              <text class="city-label city-label-home" x="155" y="94" text-anchor="middle">Nyon</text>
-              <circle class="city-pulse" cx="155" cy="108" r="7" />
+              <!-- GENÈVE -->
+              <circle class="city-dot" cx="75" cy="155" r="5.5" />
+              <text class="city-label" x="75" y="142" text-anchor="middle" data-fr="Genève" data-en="Geneva">Genève</text>
 
-              <!-- Gland -->
-              <circle class="city-dot" cx="195" cy="100" r="4" />
-              <text class="city-label" x="195" y="88" text-anchor="middle">Gland</text>
+              <!-- NYON (base) -->
+              <circle class="city-pulse" cx="165" cy="110" r="7" />
+              <circle class="city-dot city-home" cx="165" cy="110" r="7" />
+              <text class="city-label city-label-home" x="165" y="95" text-anchor="middle">Nyon ●</text>
 
-              <!-- Rolle -->
-              <circle class="city-dot" cx="235" cy="96" r="4" />
-              <text class="city-label" x="235" y="84" text-anchor="middle">Rolle</text>
+              <!-- GLAND -->
+              <circle class="city-dot" cx="210" cy="102" r="4.5" />
+              <text class="city-label" x="210" y="89" text-anchor="middle">Gland</text>
 
-              <!-- Lausanne -->
-              <circle class="city-dot" cx="310" cy="108" r="5" />
-              <text class="city-label" x="310" y="96" text-anchor="middle">Lausanne</text>
+              <!-- ROLLE -->
+              <circle class="city-dot" cx="255" cy="98" r="4.5" />
+              <text class="city-label" x="255" y="85" text-anchor="middle">Rolle</text>
+
+              <!-- LAUSANNE -->
+              <circle class="city-dot" cx="330" cy="112" r="5.5" />
+              <text class="city-label" x="330" y="99" text-anchor="middle">Lausanne</text>
 
               <!-- Légende -->
-              <rect class="legend-bg" x="12" y="225" width="135" height="24" rx="4" />
-              <circle cx="24" cy="237" r="4" fill="var(--accent-green)" opacity="0.7" />
-              <text class="legend-text" x="34" y="241" data-fr="Zone de mobilité" data-en="Mobility zone">Zone de mobilité</text>
+              <rect class="legend-bg" x="14" y="245" width="150" height="24" rx="5" />
+              <circle cx="28" cy="257" r="5" class="legend-dot" />
+              <text class="legend-text" x="40" y="261" data-fr="Zone de mobilité" data-en="Mobility zone">Zone de mobilité</text>
+
+              <!-- Label Lac -->
+              <text class="lake-label" x="220" y="180" text-anchor="middle" data-fr="Lac Léman" data-en="Lake Geneva">Lac Léman</text>
             </svg>
 
             <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.75rem; text-align:center;" data-fr="📍 Basé à Nyon — Mobile sur toute la région lémanique" data-en="📍 Based in Nyon — Mobile across the Lake Geneva region">📍 Basé à Nyon — Mobile sur toute la région lémanique</p>
