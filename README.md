@@ -75,6 +75,5 @@ Toutes les variables de design sont dans `assets/css/style.css` — section `:ro
 ## Contact
 
 - Email : Abderahmane.chaouche.0@gmail.com
-- Tél : 079 735 33 50
 - LinkedIn : [abderahmane-chaouche](https://www.linkedin.com/in/abderahmane-chaouche)
 - GitHub Pages : [abder541.github.io/Portfolio](https://abder541.github.io/Portfolio/)
