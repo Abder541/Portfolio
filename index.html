@@ -73,7 +73,7 @@
           <div class="hero-actions">
             <a href="projects.html#projects" class="btn btn-primary" data-fr="Voir mes projets" data-en="View my projects">Voir mes projets</a>
             <a href="contact.html#contact-form" class="btn btn-secondary" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
-            <a href="assets/docs/CV_Abderahmane_Chaouche_v4.pdf" download class="btn btn-ghost" data-fr="📄 Télécharger CV" data-en="📄 Download CV">📄 Télécharger CV</a>
+            <button class="btn btn-ghost" onclick="openCvModal()" data-fr="📄 Prévisualiser CV" data-en="📄 Preview CV">📄 Prévisualiser CV</button>
             <div class="hero-socials">
               <a href="https://www.linkedin.com/in/abderahmanechaouche"
                  target="_blank" rel="noopener noreferrer" class="btn-icon"
@@ -307,6 +307,32 @@
 </footer>
 
 <button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page">↑</button>
+
+<!-- ===== CV PREVIEW MODAL ===== -->
+<div class="cv-modal-overlay" id="cv-modal" onclick="closeCvModal(event)">
+  <div class="cv-modal">
+    <button class="cv-modal-close" onclick="closeCvModal()" aria-label="Fermer">&times;</button>
+    <iframe src="assets/docs/CV_Abderahmane_Chaouche_v7.pdf" class="cv-modal-iframe" title="CV Abderahmane Chaouche"></iframe>
+    <div class="cv-modal-actions">
+      <a href="assets/docs/CV_Abderahmane_Chaouche_v7.pdf" download class="btn btn-primary" data-fr="📥 Télécharger le CV" data-en="📥 Download CV">📥 Télécharger le CV</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function openCvModal() {
+  document.getElementById('cv-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeCvModal(e) {
+  if (e && e.target !== e.currentTarget) return;
+  document.getElementById('cv-modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeCvModal();
+});
+</script>
 
 <script src="assets/js/lang.js"></script>
 <script src="assets/js/theme.js"></script>

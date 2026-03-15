@@ -100,16 +100,16 @@
             </div>
           </a>
 
-          <!-- Télécharger CV -->
-          <a href="assets/docs/CV_Abderahmane_Chaouche_v4.pdf" download class="contact-info-card" style="text-decoration:none;">
+          <!-- Prévisualiser CV -->
+          <div class="contact-info-card" style="cursor:pointer;" onclick="openCvModal()">
             <div class="contact-info-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </div>
             <div>
-              <p class="contact-info-label" data-fr="Télécharger" data-en="Download">Télécharger</p>
+              <p class="contact-info-label" data-fr="Prévisualiser" data-en="Preview">Prévisualiser</p>
               <p class="contact-info-value" data-fr="Mon CV (PDF)" data-en="My CV (PDF)">Mon CV (PDF)</p>
             </div>
-          </a>
+          </div>
 
           <!-- Localisation — Carte interactive -->
           <div class="card mobility-card" style="margin-top:0.5rem;">
@@ -279,6 +279,33 @@
 </footer>
 
 <button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page"></button>
+
+<!-- ===== CV PREVIEW MODAL ===== -->
+<div class="cv-modal-overlay" id="cv-modal" onclick="closeCvModal(event)">
+  <div class="cv-modal">
+    <button class="cv-modal-close" onclick="closeCvModal()" aria-label="Fermer">&times;</button>
+    <iframe src="assets/docs/CV_Abderahmane_Chaouche_v7.pdf" class="cv-modal-iframe" title="CV Abderahmane Chaouche"></iframe>
+    <div class="cv-modal-actions">
+      <a href="assets/docs/CV_Abderahmane_Chaouche_v7.pdf" download class="btn btn-primary" data-fr="📥 Télécharger le CV" data-en="📥 Download CV">📥 Télécharger le CV</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function openCvModal() {
+  document.getElementById('cv-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeCvModal(e) {
+  if (e && e.target !== e.currentTarget) return;
+  document.getElementById('cv-modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeCvModal();
+});
+</script>
+
 <script>
   const EMAILJS_PUBLIC_KEY  = "HON15hJQozaIn-hwA";
   const EMAILJS_SERVICE_ID  = "service_g71zdau";
