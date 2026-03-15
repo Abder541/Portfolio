@@ -454,7 +454,10 @@ section { padding: var(--section-pad); }
   padding-left: 1.2rem; position: relative;
 }
 .project-card-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
-.project-card-footer { margin-top: auto; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.project-card-footer { margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem; }
+.project-card-footer > .btn-primary { width: 100%; justify-content: center; text-align: center; }
+.project-btn-group { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.project-btn-group .btn { font-size: 0.78rem; padding: 0.38rem 0.8rem; }
 
 /* ---- 20. FILTERS ---- */
 .filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
