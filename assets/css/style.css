@@ -730,6 +730,29 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
   padding: 3.5rem 0 2.5rem;
 }
 
+/* ---- 28b. NAV CONTROLS ---- */
+.nav-controls {
+  display: flex; align-items: center; gap: 0.5rem; margin-left: 0.5rem;
+}
+.nav-controls .theme-toggle,
+.nav-controls .lang-toggle { margin-left: 0; }
+
+/* ---- 28c. CERTIFICATIONS GRID ---- */
+.certifications-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;
+}
+.cert-card {
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 0.85rem 1rem;
+}
+.cert-badge-dot {
+  display: inline-block; width: 8px; height: 8px;
+  border-radius: 50%; margin-bottom: 0.5rem;
+}
+@media (max-width: 700px) {
+  .certifications-grid { grid-template-columns: 1fr; }
+}
+
 /* ---- 28. RESPONSIVE ---- */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
