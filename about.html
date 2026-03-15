@@ -136,21 +136,24 @@
           <div class="card reveal" style="margin-top:1.25rem;">
             <h3 style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:1rem;" data-fr="Certifications" data-en="Certifications">Certifications</h3>
             <div class="certifications-grid">
-              <div class="cert-card">
+              <button type="button" class="cert-card cert-card-btn" data-pdf="assets/docs/cert-fortinet-fcf.pdf" data-title="Fortinet FCF" style="text-align:left;width:100%;background:none;border:1px solid var(--border);cursor:pointer;">
                 <span class="cert-badge-dot" style="background:#10d9a0;"></span>
                 <p style="font-size:0.82rem; font-weight:600; color:var(--text-primary); margin-bottom:0.2rem;" data-fr="Fortinet FCF" data-en="Fortinet FCF">Fortinet FCF</p>
-                <p style="font-size:0.75rem; color:var(--text-muted); margin:0;" data-fr="Cybersécurité · Mars 2026" data-en="Cybersecurity · March 2026">Cybersécurité · Mars 2026</p>
-              </div>
-              <div class="cert-card">
+                <p style="font-size:0.75rem; color:var(--text-muted); margin:0 0 0.5rem;" data-fr="Cybersécurité · Mars 2026" data-en="Cybersecurity · March 2026">Cybersécurité · Mars 2026</p>
+                <span style="font-size:0.72rem; color:var(--accent); font-weight:500;" data-fr="👁 Voir le certificat" data-en="👁 View certificate">👁 Voir le certificat</span>
+              </button>
+              <button type="button" class="cert-card cert-card-btn" data-pdf="assets/docs/cert-cisco-cybersecurity.pdf" data-title="Cisco Cybersecurity" style="text-align:left;width:100%;background:none;border:1px solid var(--border);cursor:pointer;">
                 <span class="cert-badge-dot" style="background:#4f8ef7;"></span>
                 <p style="font-size:0.82rem; font-weight:600; color:var(--text-primary); margin-bottom:0.2rem;" data-fr="Cisco Cybersecurity" data-en="Cisco Cybersecurity">Cisco Cybersecurity</p>
-                <p style="font-size:0.75rem; color:var(--text-muted); margin:0;" data-fr="Networking Academy · Mars 2026" data-en="Networking Academy · March 2026">Networking Academy · Mars 2026</p>
-              </div>
-              <div class="cert-card">
+                <p style="font-size:0.75rem; color:var(--text-muted); margin:0 0 0.5rem;" data-fr="Networking Academy · Mars 2026" data-en="Networking Academy · March 2026">Networking Academy · Mars 2026</p>
+                <span style="font-size:0.72rem; color:var(--accent); font-weight:500;" data-fr="👁 Voir le certificat" data-en="👁 View certificate">👁 Voir le certificat</span>
+              </button>
+              <button type="button" class="cert-card cert-card-btn" data-pdf="assets/docs/cert-azure-ai-essentials.pdf" data-title="Azure AI Essentials" style="text-align:left;width:100%;background:none;border:1px solid var(--border);cursor:pointer;">
                 <span class="cert-badge-dot" style="background:#0078d4;"></span>
                 <p style="font-size:0.82rem; font-weight:600; color:var(--text-primary); margin-bottom:0.2rem;" data-fr="Azure AI Essentials" data-en="Azure AI Essentials">Azure AI Essentials</p>
-                <p style="font-size:0.75rem; color:var(--text-muted); margin:0;" data-fr="Microsoft · Mars 2026" data-en="Microsoft · March 2026">Microsoft · Mars 2026</p>
-              </div>
+                <p style="font-size:0.75rem; color:var(--text-muted); margin:0 0 0.5rem;" data-fr="Microsoft · Mars 2026" data-en="Microsoft · March 2026">Microsoft · Mars 2026</p>
+                <span style="font-size:0.72rem; color:var(--accent); font-weight:500;" data-fr="👁 Voir le certificat" data-en="👁 View certificate">👁 Voir le certificat</span>
+              </button>
             </div>
           </div>
 
@@ -319,8 +322,53 @@
 </footer>
 
 <button class="back-to-top" id="back-to-top" aria-label="Retour en haut de la page"></button>
+<!-- ===== CERT MODAL ===== -->
+<div id="cert-modal" style="display:none; position:fixed; inset:0; background:rgba(13,15,26,0.92); z-index:2000; align-items:center; justify-content:center; padding:1.5rem;">
+  <div style="position:relative; width:100%; max-width:900px; height:90vh; background:var(--bg-secondary); border-radius:var(--radius); border:1px solid var(--border); display:flex; flex-direction:column; overflow:hidden;">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.25rem; border-bottom:1px solid var(--border); flex-shrink:0;">
+      <span id="cert-modal-title" style="font-weight:600; font-size:0.95rem; color:var(--text-primary);"></span>
+      <div style="display:flex; gap:0.5rem; align-items:center;">
+        <a id="cert-modal-download" href="#" download style="font-size:0.8rem; padding:0.35rem 0.8rem;" class="btn btn-ghost" data-fr="📥 Télécharger" data-en="📥 Download">📥 Télécharger</a>
+        <button id="cert-modal-close" style="background:none; border:none; color:var(--text-muted); font-size:1.3rem; cursor:pointer; padding:0.25rem 0.5rem; line-height:1;">✕</button>
+      </div>
+    </div>
+    <iframe id="cert-modal-iframe" src="" style="flex:1; width:100%; border:none;"></iframe>
+  </div>
+</div>
+
 <script src="assets/js/lang.js"></script>
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+(function() {
+  var modal = document.getElementById('cert-modal');
+  var iframe = document.getElementById('cert-modal-iframe');
+  var closeBtn = document.getElementById('cert-modal-close');
+  var titleEl = document.getElementById('cert-modal-title');
+  var downloadBtn = document.getElementById('cert-modal-download');
+  var lastPdf = '';
+
+  document.querySelectorAll('.cert-card-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var pdf = btn.getAttribute('data-pdf');
+      var title = btn.getAttribute('data-title');
+      titleEl.textContent = title;
+      downloadBtn.href = pdf;
+      downloadBtn.setAttribute('download', title + '.pdf');
+      if (pdf !== lastPdf) { iframe.src = pdf; lastPdf = pdf; }
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
+})();
+</script>
 </body>
 </html>
