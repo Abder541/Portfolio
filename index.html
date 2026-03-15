@@ -312,7 +312,7 @@
 <div class="cv-modal-overlay" id="cv-modal" onclick="closeCvModal(event)">
   <div class="cv-modal">
     <button class="cv-modal-close" onclick="closeCvModal()" aria-label="Fermer">&times;</button>
-    <iframe src="assets/docs/CV_Abderahmane_Chaouche_v7.pdf" class="cv-modal-iframe" title="CV Abderahmane Chaouche"></iframe>
+    <iframe class="cv-modal-iframe" id="cv-iframe" title="CV Abderahmane Chaouche"></iframe>
     <div class="cv-modal-actions">
       <a href="assets/docs/CV_Abderahmane_Chaouche_v7.pdf" download class="btn btn-primary" data-fr="📥 Télécharger le CV" data-en="📥 Download CV">📥 Télécharger le CV</a>
     </div>
@@ -320,7 +320,10 @@
 </div>
 
 <script>
+var CV_PATH = 'assets/docs/CV_Abderahmane_Chaouche_v7.pdf';
 function openCvModal() {
+  var iframe = document.getElementById('cv-iframe');
+  if (!iframe.src || !iframe.src.includes('CV_')) iframe.src = CV_PATH;
   document.getElementById('cv-modal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
