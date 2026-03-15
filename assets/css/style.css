@@ -732,7 +732,8 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
 
 /* ---- 28b. NAV CONTROLS ---- */
 .nav-controls {
-  display: flex; align-items: center; gap: 0.5rem; margin-left: 0.5rem;
+  display: flex; flex-direction: row; align-items: center;
+  gap: 0.5rem; margin-left: 0.75rem; flex-shrink: 0;
 }
 .nav-controls .theme-toggle,
 .nav-controls .lang-toggle { margin-left: 0; }
