@@ -1,15 +1,15 @@
 <script lang="ts">
-	// Phase 1 — Placeholder
-	// Le vrai contenu sera construit à partir de la Phase 2
+	// Phase 2 — Placeholder home
+	// Le vrai contenu (Hero 3D, Marquee, Bento, Projets) arrive en Phase 4
 </script>
 
-<main id="main-content">
-	<div class="placeholder">
-		<span class="label">v2.0.0 — OPS CONSOLE</span>
-		<h1>Abderahmane Chaouche</h1>
-		<p>Portfolio en cours de construction · Phase 1 validée ✓</p>
-	</div>
-</main>
+<div class="placeholder">
+	<span class="text-label">v2.0.0 — OPS CONSOLE</span>
+	<h1 class="text-display" style="color: var(--text-primary)">Abderahmane Chaouche</h1>
+	<p class="text-mono" style="color: var(--text-muted); margin-top: 1rem">
+		Portfolio en cours de construction · Phase 2 validée ✓
+	</p>
+</div>
 
 <style>
 	.placeholder {
@@ -17,30 +17,9 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		min-height: 100vh;
+		min-height: calc(100vh - var(--nav-height));
 		gap: var(--sp-4);
 		text-align: center;
-	}
-
-	.label {
-		font-family: var(--font-mono);
-		font-size: var(--fs-xs);
-		text-transform: uppercase;
-		letter-spacing: 0.12em;
-		color: var(--accent-cyan);
-	}
-
-	h1 {
-		font-family: var(--font-display);
-		font-size: var(--fs-4xl);
-		font-weight: 800;
-		letter-spacing: -0.04em;
-		color: var(--text-primary);
-	}
-
-	p {
-		font-family: var(--font-mono);
-		font-size: var(--fs-sm);
-		color: var(--text-muted);
+		padding: var(--sp-8);
 	}
 </style>
