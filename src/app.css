@@ -1,0 +1,13 @@
+/* =============================================================
+   APP.CSS — Point d'entrée global des styles
+   Import order matters : fonts → tokens → reset → utilities
+   ============================================================= */
+
+/* Fonts auto-hébergées via @fontsource (npm packages) */
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+
+/* Design system */
+@import '$lib/styles/tokens.css';
+@import '$lib/styles/reset.css';
+@import '$lib/styles/utilities.css';
