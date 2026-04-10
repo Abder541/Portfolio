@@ -2,14 +2,27 @@
 <html lang="fr" data-theme="dark">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- Les fonts sont servies par Vite via @fontsource-variable (preload auto) -->
+		<meta name="theme-color" content="#050810" media="(prefers-color-scheme: dark)" />
+		<meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+		<!-- Anti-FOUC : applique le thème et la langue sauvegardés avant le premier paint -->
+		<script>
+			(function () {
+				try {
+					var theme = localStorage.getItem('portfolio-theme') || 'dark';
+					var lang = localStorage.getItem('portfolio-lang');
+					if (!lang) {
+						lang = navigator.language && navigator.language.startsWith('fr') ? 'fr' : 'en';
+					}
+					document.documentElement.setAttribute('data-theme', theme);
+					document.documentElement.lang = lang;
+				} catch (e) {}
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<!-- Skip link WCAG 2.2 AA -->
-		<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

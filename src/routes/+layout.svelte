@@ -41,6 +41,41 @@
 	});
 </script>
 
+<svelte:head>
+	<meta name="author" content="Abderahmane Chaouche" />
+	<meta name="robots" content="index, follow" />
+	<!-- Open Graph -->
+	<meta property="og:site_name" content="Abderahmane Chaouche" />
+	<meta property="og:type" content="website" />
+	<meta
+		property="og:title"
+		content={langStore.isFr
+			? 'Abderahmane Chaouche — Apprenti Informaticien CFC'
+			: 'Abderahmane Chaouche — IT Apprentice (CFC)'}
+	/>
+	<meta
+		property="og:description"
+		content={langStore.isFr
+			? 'Apprenti CFC Informaticien — Infrastructure & Cybersécurité. Disponible août 2026. Nyon, région genevoise.'
+			: 'IT Apprentice (CFC) — Infrastructure & Cybersecurity. Available August 2026. Nyon, Geneva area.'}
+	/>
+	<meta property="og:url" content="https://abder541.github.io/Portfolio" />
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary" />
+	<meta
+		name="twitter:title"
+		content={langStore.isFr
+			? 'Abderahmane Chaouche — Apprenti Informaticien CFC'
+			: 'Abderahmane Chaouche — IT Apprentice (CFC)'}
+	/>
+	<meta
+		name="twitter:description"
+		content={langStore.isFr
+			? 'Apprenti CFC Informaticien — Infrastructure & Cybersécurité. Disponible août 2026.'
+			: 'IT Apprentice (CFC) — Infrastructure & Cybersecurity. Available August 2026.'}
+	/>
+</svelte:head>
+
 <!-- Skip link accessibilité (WCAG 2.2 — permet aux claviers de sauter la nav) -->
 <a href="#main-content" class="skip-link">
 	{langStore.isFr ? 'Aller au contenu principal' : 'Skip to main content'}

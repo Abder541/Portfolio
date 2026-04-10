@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abder541.github.io/Portfolio/sitemap.xml
