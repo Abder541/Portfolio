@@ -110,6 +110,22 @@
 	--z-modal: 1000;
 	--z-toast: 2000;
 	--z-cursor: 9999;
+
+	/* ====== ALIAS (retro-compat composants Phase 4/5) ====== */
+	--bg-secondary: var(--bg-surface);
+	--border: var(--border-default);
+	--border-hover: var(--border-strong);
+	--radius-sm: var(--r-sm);
+	--radius-md: var(--r-md);
+	--radius-lg: var(--r-lg);
+	--radius-xl: var(--r-xl);
+	--ease-smooth: var(--dur-base) var(--ease-out-quint);
+	--ease-quick: var(--dur-fast) var(--ease-out-quint);
+	--font-sans: var(--font-display);
+
+	/* Couleurs surface pour navbar blur et terminal (basculent en light) */
+	--nav-bg: rgba(5, 8, 16, 0.85);
+	--terminal-bg: #0a0d1a;
 }
 
 /* ====== LIGHT THEME OVERRIDE ====== */
@@ -143,4 +159,8 @@
 
 	--shadow-glow-cyan: 0 0 24px rgba(8, 145, 178, 0.15);
 	--shadow-glow-violet: 0 0 32px rgba(124, 58, 237, 0.1);
+
+	/* Alias re-map pour light theme */
+	--nav-bg: rgba(255, 255, 255, 0.85);
+	--terminal-bg: #0f172a;
 }

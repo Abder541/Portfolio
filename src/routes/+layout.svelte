@@ -16,6 +16,12 @@
 
 	let { children } = $props();
 
+	// Synchronise <html lang> avec la langue active (SEO + a11y)
+	$effect(() => {
+		if (!browser) return;
+		document.documentElement.lang = langStore.current;
+	});
+
 	onMount(async () => {
 		// Initialise les préférences utilisateur (localStorage + media queries)
 		// Ordre important : motion d'abord (conditionne les animations)
@@ -34,6 +40,11 @@
 		}
 	});
 </script>
+
+<!-- Skip link accessibilité (WCAG 2.2 — permet aux claviers de sauter la nav) -->
+<a href="#main-content" class="skip-link">
+	{langStore.isFr ? 'Aller au contenu principal' : 'Skip to main content'}
+</a>
 
 <!-- Curseur custom (desktop uniquement, géré en interne) -->
 {#if browser}

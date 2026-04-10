@@ -469,7 +469,7 @@
 
 	/* Terminal */
 	.terminal {
-		background: #0a0d1a;
+		background: var(--terminal-bg);
 		border: 1px solid var(--border);
 		border-radius: var(--radius-lg);
 		overflow: hidden;
@@ -481,8 +481,8 @@
 		align-items: center;
 		gap: var(--sp-2);
 		padding: var(--sp-3) var(--sp-4);
-		background: color-mix(in srgb, #fff 4%, transparent);
-		border-bottom: 1px solid var(--border);
+		background: color-mix(in srgb, var(--accent-cyan) 6%, transparent);
+		border-bottom: 1px solid color-mix(in srgb, var(--accent-cyan) 15%, transparent);
 	}
 
 	.terminal-dot {
