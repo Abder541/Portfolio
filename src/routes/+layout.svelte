@@ -6,7 +6,6 @@
 	// Composants UI permanents
 	import Navbar from '$lib/components/ui/Navbar.svelte';
 	import Footer from '$lib/components/ui/Footer.svelte';
-	import CustomCursor from '$lib/components/ui/CustomCursor.svelte';
 	import BackToTop from '$lib/components/ui/BackToTop.svelte';
 
 	// Stores à initialiser côté client
@@ -80,11 +79,6 @@
 <a href="#main-content" class="skip-link">
 	{langStore.isFr ? 'Aller au contenu principal' : 'Skip to main content'}
 </a>
-
-<!-- Curseur custom (desktop uniquement, géré en interne) -->
-{#if browser}
-	<CustomCursor />
-{/if}
 
 <!-- Navigation principale -->
 <Navbar />

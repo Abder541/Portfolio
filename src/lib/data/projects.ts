@@ -7,6 +7,7 @@ export interface Project {
 	featured: boolean;
 	gradientFrom: string;
 	gradientTo: string;
+	image?: string; // chemin relatif depuis /static (ex: /img/projects/foo.png)
 	titleFr: string;
 	titleEn: string;
 	contextFr: string;
@@ -89,6 +90,7 @@ export const projects: Project[] = [
 		featured: true,
 		gradientFrom: '#0d1117',
 		gradientTo: '#1a2234',
+		image: '/img/projects/luxeshop-banner.png',
 		titleFr: 'Luxe Shop — E-commerce Fullstack',
 		titleEn: 'Luxe Shop — Fullstack E-commerce',
 		contextFr: 'Février 2026 · Projet école · Développement Fullstack',

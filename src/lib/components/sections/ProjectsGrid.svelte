@@ -21,12 +21,21 @@
 		<div class="projects-grid">
 			{#each featuredProjects as project (project.id)}
 				<article class="project-card">
-					<!-- Banner coloré -->
+					<!-- Banner : image si disponible, sinon gradient -->
 					<div
 						class="project-banner"
-						style="background: linear-gradient(135deg, {project.gradientFrom} 0%, {project.gradientTo} 100%);"
+						style={project.image ? '' : `background: linear-gradient(135deg, ${project.gradientFrom} 0%, ${project.gradientTo} 100%);`}
 						aria-hidden="true"
 					>
+						{#if project.image}
+							<img
+								src="{base}{project.image}"
+								alt=""
+								class="project-banner-img"
+								loading="lazy"
+								decoding="async"
+							/>
+						{/if}
 						<span class="project-category-badge category-{project.category}">
 							{project.category}
 						</span>
@@ -123,11 +132,21 @@
 
 	/* Banner */
 	.project-banner {
-		height: 80px;
+		height: 120px;
 		position: relative;
 		display: flex;
 		align-items: flex-end;
 		padding: var(--sp-3);
+		overflow: hidden;
+	}
+
+	.project-banner-img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top;
 	}
 
 	.project-category-badge {

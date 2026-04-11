@@ -1,10 +1,6 @@
-<!-- Hero.svelte — Section hero complète (100vh)
-     - Gauche : nom + titre + badge dispo + CTAs
-     - Droite : scène 3D (rack serveur) ou fallback SVG
-     - Le composant 3D est chargé en lazy (import dynamique) :
-       * Seulement côté client (pas au SSR)
-       * Seulement si le viewport est visible (IntersectionObserver)
-       * Seulement si prefers-reduced-motion n'est PAS activé -->
+<!-- Hero.svelte — Section hero plein écran
+     Canvas 3D en BACKGROUND (100vw × 100vh) + texte superposé centré.
+     Le 3D est lazy-loadé (IntersectionObserver + import dynamique). -->
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
@@ -13,31 +9,24 @@
 	import { langStore } from '$lib/stores/lang.svelte';
 	import Scene3DFallback from '$lib/components/three/Scene3DFallback.svelte';
 
-	// Le composant HeroScene sera importé dynamiquement
 	let HeroScene: any = $state(null);
 	let canvasReady = $state(false);
-	let heroContainer: HTMLDivElement;
+	let heroContainer: HTMLElement;
 
-	const title = $derived(langStore.isFr ? 'Abderahmane Chaouche' : 'Abderahmane Chaouche');
 	const subtitle = $derived(
 		langStore.isFr
 			? 'Apprenti Informaticien CFC — Infrastructure & Cybersécurité'
 			: 'IT Apprentice — Infrastructure & Cybersecurity'
 	);
-	const badgeText = $derived(
-		langStore.isFr ? 'Disponible août 2026' : 'Available August 2026'
-	);
+	const badgeText = $derived(langStore.isFr ? 'Disponible août 2026' : 'Available August 2026');
 	const ctaProjects = $derived(langStore.isFr ? 'Voir mes projets' : 'See my projects');
 	const ctaContact = $derived(langStore.isFr ? 'Me contacter' : 'Contact me');
 	const scrollHint = $derived(langStore.isFr ? 'Scroll pour explorer' : 'Scroll to explore');
 
 	onMount(async () => {
 		if (!browser) return;
-
-		// Si reduced-motion activé → on ne charge jamais le 3D
 		if (motionStore.reduced) return;
 
-		// IntersectionObserver : charge le 3D seulement quand la section hero est visible
 		const observer = new IntersectionObserver(
 			async ([entry]) => {
 				if (entry.isIntersecting) {
@@ -46,106 +35,106 @@
 						HeroScene = module.default;
 						canvasReady = true;
 					} catch (e) {
-						// Si WebGL non supporté ou erreur, le fallback SVG reste affiché
-						console.warn('3D non disponible, fallback SVG utilisé:', e);
+						console.warn('3D non disponible, fallback utilisé:', e);
 					}
 					observer.disconnect();
 				}
 			},
-			{ rootMargin: '200px' } // charge 200px avant d'être visible
+			{ rootMargin: '200px' }
 		);
 
 		observer.observe(heroContainer);
-
 		return () => observer.disconnect();
 	});
 </script>
 
 <section class="hero" bind:this={heroContainer}>
-	<!-- Gradient d'ambiance en arrière-plan -->
-	<div class="hero-gradient" aria-hidden="true"></div>
 
-	<div class="hero-inner container">
-		<!-- Colonne gauche : texte -->
-		<div class="hero-text">
-			<!-- Badge disponibilité -->
-			<div class="hero-badge badge badge-green">
-				<span class="badge-dot" aria-hidden="true"></span>
-				{badgeText}
-			</div>
+	<!-- Couche 1 : Canvas 3D plein écran en arrière-plan -->
+	<div class="hero-canvas" aria-hidden="true">
+		{#if HeroScene && canvasReady}
+			<HeroScene />
+		{:else}
+			<Scene3DFallback />
+		{/if}
+	</div>
 
-			<!-- Nom (titre principal) -->
-			<h1 class="hero-title">{title}</h1>
+	<!-- Couche 2 : Overlay pour lisibilité du texte -->
+	<div class="hero-overlay" aria-hidden="true"></div>
 
-			<!-- Sous-titre -->
-			<p class="hero-subtitle">{subtitle}</p>
-
-			<!-- CTA -->
-			<div class="hero-cta">
-				<a href="{base}/projects" class="btn btn-primary">{ctaProjects}</a>
-				<a href="{base}/contact" class="btn btn-secondary">{ctaContact}</a>
-			</div>
+	<!-- Couche 3 : Contenu texte centré -->
+	<div class="hero-content container">
+		<div class="hero-badge badge badge-green">
+			<span class="badge-dot" aria-hidden="true"></span>
+			{badgeText}
 		</div>
 
-		<!-- Colonne droite : 3D ou fallback -->
-		<div class="hero-visual" aria-hidden="true">
-			{#if HeroScene && canvasReady}
-				<HeroScene />
-			{:else}
-				<Scene3DFallback />
-			{/if}
+		<h1 class="hero-title">Abderahmane<br />Chaouche</h1>
+
+		<p class="hero-subtitle">{subtitle}</p>
+
+		<div class="hero-cta">
+			<a href="{base}/projects" class="btn btn-primary">{ctaProjects}</a>
+			<a href="{base}/contact" class="btn btn-secondary">{ctaContact}</a>
 		</div>
 	</div>
 
-	<!-- Indicateur de scroll -->
+	<!-- Indicateur scroll -->
 	<div class="scroll-indicator" aria-hidden="true">
 		<span class="scroll-text">{scrollHint}</span>
 		<div class="scroll-line"></div>
 	</div>
+
 </section>
 
 <style>
 	.hero {
 		position: relative;
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		width: 100%;
+		height: 100vh;
+		min-height: 600px;
 		overflow: hidden;
-		padding-top: var(--nav-height);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
-	/* Gradient d'ambiance — radial cyan subtil en haut */
-	.hero-gradient {
+	/* Canvas 3D : couvre tout le hero */
+	.hero-canvas {
 		position: absolute;
 		inset: 0;
-		background: var(--gradient-hero);
-		pointer-events: none;
+		width: 100%;
+		height: 100%;
 		z-index: 0;
 	}
 
-	.hero-inner {
-		position: relative;
+	/* Overlay gradient pour assurer la lisibilité */
+	.hero-overlay {
+		position: absolute;
+		inset: 0;
 		z-index: 1;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: center;
-		gap: var(--sp-12);
-		min-height: calc(100vh - var(--nav-height) - 80px);
+		background:
+			radial-gradient(ellipse 70% 60% at 50% 50%, transparent 20%, rgba(5, 8, 16, 0.55) 100%),
+			linear-gradient(to bottom, rgba(5, 8, 16, 0.3) 0%, rgba(5, 8, 16, 0.1) 50%, rgba(5, 8, 16, 0.55) 100%);
 	}
 
-	/* --- Texte --- */
-	.hero-text {
+	/* Contenu texte : centré par-dessus le canvas */
+	.hero-content {
+		position: relative;
+		z-index: 2;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
 		gap: var(--sp-6);
+		padding-top: var(--nav-height);
 	}
 
 	.hero-badge {
 		display: inline-flex;
 		align-items: center;
 		gap: var(--sp-2);
-		width: fit-content;
 	}
 
 	.badge-dot {
@@ -167,31 +156,28 @@
 		font-weight: 800;
 		line-height: 0.95;
 		letter-spacing: -0.04em;
-		color: var(--text-primary);
+		color: #fff;
+		text-shadow:
+			0 0 80px rgba(0, 212, 255, 0.4),
+			0 2px 40px rgba(0, 0, 0, 0.7);
 	}
 
 	.hero-subtitle {
 		font-family: var(--font-mono);
 		font-size: var(--fs-base);
-		color: var(--text-muted);
+		color: rgba(232, 240, 255, 0.8);
 		line-height: 1.5;
-		max-width: 480px;
+		max-width: 520px;
+		text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
 	}
 
 	.hero-cta {
 		display: flex;
 		gap: var(--sp-4);
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 
-	/* --- Visual 3D / Fallback --- */
-	.hero-visual {
-		width: 100%;
-		height: 500px;
-		position: relative;
-	}
-
-	/* --- Scroll indicator --- */
 	.scroll-indicator {
 		position: absolute;
 		bottom: var(--sp-8);
@@ -201,7 +187,7 @@
 		flex-direction: column;
 		align-items: center;
 		gap: var(--sp-2);
-		z-index: 1;
+		z-index: 2;
 	}
 
 	.scroll-text {
@@ -209,7 +195,7 @@
 		font-size: var(--fs-xs);
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
-		color: var(--text-dim);
+		color: rgba(232, 240, 255, 0.4);
 	}
 
 	.scroll-line {
@@ -224,44 +210,12 @@
 		50% { transform: scaleY(0.5); opacity: 0.3; }
 	}
 
-	/* --- Responsive --- */
-	@media (max-width: 1024px) {
-		.hero-inner {
-			grid-template-columns: 1fr;
-			text-align: center;
-			gap: var(--sp-8);
-		}
-
-		.hero-text {
-			align-items: center;
-		}
-
-		.hero-visual {
-			height: 350px;
-		}
-
-		.hero-cta {
-			justify-content: center;
-		}
+	@media (prefers-reduced-motion: reduce) {
+		.badge-dot { animation: none; }
+		.scroll-line { animation: none; }
 	}
 
 	@media (max-width: 640px) {
-		.hero-title {
-			font-size: clamp(2.5rem, 8vw, 4rem);
-		}
-
-		.hero-visual {
-			height: 280px;
-		}
-	}
-
-	/* Pas de pulse si reduced-motion */
-	@media (prefers-reduced-motion: reduce) {
-		.badge-dot {
-			animation: none;
-		}
-		.scroll-line {
-			animation: none;
-		}
+		.hero-title { font-size: clamp(2.8rem, 10vw, 5rem); }
 	}
 </style>
