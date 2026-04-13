@@ -44,7 +44,10 @@
 				</div>
 
 				{#if project.detailImage}
-					<div class="case-header-visual">
+					<div
+						class="case-header-visual"
+						style="--detail-blend-color: {project.gradientFrom};"
+					>
 						<img
 							src="{base}{project.detailImage}"
 							alt={isFr ? project.titleFr : project.titleEn}
@@ -165,6 +168,7 @@
 	.case-header {
 		padding: calc(var(--nav-height) + var(--sp-12)) 0 var(--sp-16);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		overflow: hidden;
 	}
 
 	.case-header-inner {
@@ -189,12 +193,14 @@
 		display: grid;
 		grid-template-columns: 1fr 40%;
 		gap: var(--sp-10);
-		align-items: center;
+		align-items: stretch;
+		min-height: 340px;
 	}
 
 	.case-header-text {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 	}
 
 	.case-category {
@@ -227,22 +233,34 @@
 		line-height: 1.6;
 	}
 
-	/* RIGHT column — detail banner image */
+	/* RIGHT column — full-height detail banner image */
 	.case-header-visual {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: var(--sp-4);
+		position: relative;
+		padding: 0;
+		overflow: hidden;
+		border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+	}
+
+	.case-header-visual::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			to right,
+			var(--detail-blend-color, transparent) 0%,
+			transparent 40%
+		);
+		z-index: 1;
+		pointer-events: none;
 	}
 
 	.case-header-img {
-		max-width: 100%;
-		max-height: 280px;
-		width: auto;
-		height: auto;
-		object-fit: contain;
-		border-radius: var(--radius-md);
-		filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.45));
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
 	}
 
 	/* BODY */
@@ -414,15 +432,12 @@
 
 		.case-header-grid {
 			grid-template-columns: 1fr;
+			min-height: auto;
 		}
 
 		.case-header-visual {
-			justify-content: flex-start;
-			padding: 0;
-		}
-
-		.case-header-img {
-			max-height: 180px;
+			height: 220px;
+			border-radius: var(--radius-md);
 		}
 
 		.case-sidebar {

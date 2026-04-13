@@ -258,10 +258,10 @@
 
 	.project-banner-img {
 		position: absolute;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		inset: 12px;
+		width: calc(100% - 24px);
+		height: calc(100% - 24px);
+		object-fit: contain;
 		object-position: center;
 	}
 
