@@ -5,6 +5,7 @@
 	import { langStore } from '$lib/stores/lang.svelte';
 	import { t } from '$lib/data/translations';
 	import { featuredProjects } from '$lib/data/projects';
+	import TechLogo from '$lib/components/ui/TechLogo.svelte';
 
 	const isFr = $derived(langStore.isFr);
 	const p = t.projects;
@@ -21,10 +22,16 @@
 		<div class="projects-grid">
 			{#each featuredProjects as project (project.id)}
 				<article class="project-card">
-					<!-- Banner : image si disponible, sinon gradient -->
+					<a
+						href="{base}/projects/{project.id}"
+						class="project-card-link"
+						aria-label={isFr ? project.titleFr : project.titleEn}
+					></a>
+
+					<!-- Banner : image si disponible, sinon gradient + logo techno -->
 					<div
 						class="project-banner"
-						style={project.image ? '' : `background: linear-gradient(135deg, ${project.gradientFrom} 0%, ${project.gradientTo} 100%);`}
+						style="background: linear-gradient(135deg, {project.gradientFrom} 0%, {project.gradientTo} 100%);"
 						aria-hidden="true"
 					>
 						{#if project.image}
@@ -35,6 +42,10 @@
 								loading="lazy"
 								decoding="async"
 							/>
+						{:else if project.icon}
+							<div class="project-banner-logo">
+								<TechLogo icon={project.icon} size={72} />
+							</div>
 						{/if}
 						<span class="project-category-badge category-{project.category}">
 							{project.category}
@@ -116,6 +127,7 @@
 
 	/* Card */
 	.project-card {
+		position: relative;
 		background: var(--bg-base);
 		border: 1px solid var(--border);
 		border-radius: var(--radius-lg);
@@ -130,9 +142,24 @@
 		transform: translateY(-2px);
 	}
 
+	/* Stretched-link : tout le card est cliquable, les liens internes
+	   gardent leur propre zone cliquable via z-index plus élevé. */
+	.project-card-link {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		text-decoration: none;
+	}
+
+	.project-card-link:focus-visible {
+		outline: 2px solid var(--accent-cyan);
+		outline-offset: 3px;
+		border-radius: var(--radius-lg);
+	}
+
 	/* Banner */
 	.project-banner {
-		height: 120px;
+		height: 140px;
 		position: relative;
 		display: flex;
 		align-items: flex-end;
@@ -146,10 +173,22 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: top;
+		object-position: center;
+	}
+
+	.project-banner-logo {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: rgba(255, 255, 255, 0.85);
+		filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.5));
+		opacity: 0.9;
 	}
 
 	.project-category-badge {
+		position: relative;
 		font-family: var(--font-mono);
 		font-size: 0.65rem;
 		text-transform: uppercase;
@@ -181,6 +220,7 @@
 
 	/* Body */
 	.project-body {
+		position: relative;
 		padding: var(--sp-5);
 		display: flex;
 		flex-direction: column;
@@ -235,6 +275,8 @@
 	}
 
 	.project-links {
+		position: relative;
+		z-index: 2;
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--sp-2);

@@ -21,17 +21,39 @@
 	let isSubmitting = $state(false);
 	let status = $state<'idle' | 'success' | 'error'>('idle');
 
-	// Terminal animation
-	let terminalLines = $state<string[]>([]);
-	const terminalSequence = [
-		'> ssh abderahmane@portfolio.local',
-		'Connected. Welcome back.',
-		'> cat contact.txt',
-		'LinkedIn : linkedin.com/in/abderahmanechaouche',
-		'GitHub   : github.com/Abder541',
-		'Credly   : credly.com/users/abderahmane-chaouche',
-		'Dispo    : août 2026',
-		'> _'
+	// Terminal animation — chaque ligne peut contenir un lien cliquable
+	type TerminalLine = {
+		text: string;
+		kind: 'cmd' | 'output';
+		label?: string;
+		url?: string;
+	};
+
+	let terminalLines = $state<TerminalLine[]>([]);
+	const terminalSequence: TerminalLine[] = [
+		{ text: '> ssh abderahmane@portfolio.local', kind: 'cmd' },
+		{ text: 'Connected. Welcome back.', kind: 'output' },
+		{ text: '> cat contact.txt', kind: 'cmd' },
+		{
+			text: 'LinkedIn : ',
+			kind: 'output',
+			label: 'linkedin.com/in/abderahmanechaouche',
+			url: 'https://www.linkedin.com/in/abderahmanechaouche'
+		},
+		{
+			text: 'GitHub   : ',
+			kind: 'output',
+			label: 'github.com/Abder541',
+			url: 'https://github.com/Abder541'
+		},
+		{
+			text: 'Credly   : ',
+			kind: 'output',
+			label: 'credly.com/users/abderahmane-chaouche',
+			url: 'https://www.credly.com/users/abderahmane-chaouche'
+		},
+		{ text: 'Dispo    : août 2026', kind: 'output' },
+		{ text: '> _', kind: 'cmd' }
 	];
 
 	onMount(() => {
@@ -214,9 +236,16 @@
 							<span class="terminal-dot t-green"></span>
 							<span class="terminal-title">contact.sh</span>
 						</div>
-						<div class="terminal-body" aria-hidden="true">
+						<div class="terminal-body">
 							{#each terminalLines as line}
-								<p class="terminal-line {line.startsWith('>') ? 'terminal-cmd' : 'terminal-output'}">{line}</p>
+								<p class="terminal-line {line.kind === 'cmd' ? 'terminal-cmd' : 'terminal-output'}">
+									{line.text}{#if line.url}<a
+											href={line.url}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="terminal-link"
+										>{line.label}</a>{/if}
+								</p>
 							{/each}
 						</div>
 					</div>
@@ -516,6 +545,18 @@
 
 	.terminal-cmd { color: var(--accent-cyan); }
 	.terminal-output { color: color-mix(in srgb, var(--text-muted) 80%, transparent); }
+
+	.terminal-link {
+		color: var(--accent-cyan);
+		text-decoration: none;
+		border-bottom: 1px dashed color-mix(in srgb, var(--accent-cyan) 40%, transparent);
+		transition: color var(--ease-quick), border-color var(--ease-quick);
+	}
+
+	.terminal-link:hover {
+		color: var(--text-primary);
+		border-bottom-color: var(--text-primary);
+	}
 
 	/* Form */
 	.form-group {

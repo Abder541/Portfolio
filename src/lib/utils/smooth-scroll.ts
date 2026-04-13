@@ -30,5 +30,22 @@ export async function initSmoothScroll() {
 
 	gsap.ticker.lagSmoothing(0);
 
+	// Recalcule les limites de scroll quand le viewport change (zoom navigateur,
+	// pinch-zoom trackpad, redimensionnement). Sans ça, Lenis garde la hauteur
+	// initiale et bloque le scroll avant le footer après un zoom.
+	const handleResize = () => lenis.resize();
+	window.addEventListener('resize', handleResize);
+	window.visualViewport?.addEventListener('resize', handleResize);
+
+	// Laisse passer les événements Ctrl+wheel pour que le zoom natif fonctionne
+	// (sinon Lenis les consomme comme du scroll).
+	const handleWheel = (e: WheelEvent) => {
+		if (e.ctrlKey) {
+			lenis.stop();
+			requestAnimationFrame(() => lenis.start());
+		}
+	};
+	window.addEventListener('wheel', handleWheel, { passive: true });
+
 	return lenis;
 }

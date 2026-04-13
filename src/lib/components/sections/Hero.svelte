@@ -92,6 +92,7 @@
 		position: relative;
 		width: 100%;
 		height: 100vh;
+		height: 100dvh;
 		min-height: 600px;
 		overflow: hidden;
 		display: flex;
