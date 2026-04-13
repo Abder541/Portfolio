@@ -28,16 +28,6 @@
 		class="case-header"
 		style="background: linear-gradient(135deg, {project.gradientFrom} 0%, {project.gradientTo} 100%);"
 	>
-		{#if project.image}
-			<img
-				src="{base}{project.image}"
-				alt=""
-				class="case-header-bg"
-				aria-hidden="true"
-				loading="eager"
-				decoding="async"
-			/>
-		{/if}
 		<div class="container case-header-inner">
 			<a href="{base}/projects" class="case-back">
 				← {isFr ? 'Retour aux projets' : 'Back to projects'}
@@ -52,6 +42,18 @@
 					<p class="case-context">{isFr ? project.contextFr : project.contextEn}</p>
 					<p class="case-summary">{isFr ? project.summaryFr : project.summaryEn}</p>
 				</div>
+
+				{#if project.detailImage}
+					<div class="case-header-visual">
+						<img
+							src="{base}{project.detailImage}"
+							alt={isFr ? project.titleFr : project.titleEn}
+							class="case-header-img"
+							loading="eager"
+							decoding="async"
+						/>
+					</div>
+				{/if}
 			</div>
 		</div>
 	</header>
@@ -162,36 +164,11 @@
 <style>
 	.case-header {
 		padding: calc(var(--nav-height) + var(--sp-12)) 0 var(--sp-16);
-		border-bottom: 1px solid var(--border);
-		position: relative;
-		overflow: hidden;
-	}
-
-	.case-header-bg {
-		position: absolute;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-		opacity: 0.35;
-		pointer-events: none;
-	}
-
-	.case-header::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background:
-			linear-gradient(180deg, rgba(5, 8, 16, 0.25) 0%, rgba(5, 8, 16, 0.7) 100%),
-			radial-gradient(ellipse 90% 70% at 50% 100%, rgba(5, 8, 16, 0.65) 40%, transparent 100%);
-		pointer-events: none;
-		z-index: 1;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 	}
 
 	.case-header-inner {
 		position: relative;
-		z-index: 2;
 	}
 
 	.case-back {
@@ -210,9 +187,14 @@
 
 	.case-header-grid {
 		display: grid;
-		grid-template-columns: 1fr;
-		gap: var(--sp-8);
+		grid-template-columns: 1fr 40%;
+		gap: var(--sp-10);
 		align-items: center;
+	}
+
+	.case-header-text {
+		display: flex;
+		flex-direction: column;
 	}
 
 	.case-category {
@@ -222,7 +204,7 @@
 
 	.case-title {
 		font-family: var(--font-display);
-		font-size: clamp(2rem, 5vw, 3.25rem);
+		font-size: clamp(1.75rem, 4vw, 3rem);
 		font-weight: 800;
 		color: #fff;
 		line-height: 1.05;
@@ -241,8 +223,26 @@
 	.case-summary {
 		font-size: var(--fs-md);
 		color: rgba(255, 255, 255, 0.85);
-		max-width: 640px;
+		max-width: 600px;
 		line-height: 1.6;
+	}
+
+	/* RIGHT column — detail banner image */
+	.case-header-visual {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--sp-4);
+	}
+
+	.case-header-img {
+		max-width: 100%;
+		max-height: 280px;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+		border-radius: var(--radius-md);
+		filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.45));
 	}
 
 	/* BODY */
@@ -414,6 +414,15 @@
 
 		.case-header-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.case-header-visual {
+			justify-content: flex-start;
+			padding: 0;
+		}
+
+		.case-header-img {
+			max-height: 180px;
 		}
 
 		.case-sidebar {

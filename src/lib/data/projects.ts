@@ -21,6 +21,7 @@ export interface Project {
 	gradientFrom: string;
 	gradientTo: string;
 	image?: string;
+	detailImage?: string;
 	titleFr: string;
 	titleEn: string;
 	contextFr: string;
@@ -48,6 +49,7 @@ export const projects: Project[] = [
 		gradientFrom: '#0a1628',
 		gradientTo: '#1a3a6b',
 		image: '/img/projects/Wazuh_Logo.webp',
+		detailImage: '/img/projects/wazuh-detail-banner.webp',
 		titleFr: 'Wazuh SIEM — Cybersécurité',
 		titleEn: 'Wazuh SIEM — Cybersecurity',
 		contextFr: 'Juin 2025 · 2 semaines · Hackathon',
@@ -122,6 +124,7 @@ export const projects: Project[] = [
 		gradientFrom: '#003065',
 		gradientTo: '#0078d4',
 		image: '/img/projects/Microsoft_Azure.jpg',
+		detailImage: '/img/projects/azure-detail-banner.webp',
 		titleFr: 'Projets Azure — Infrastructure Cloud',
 		titleEn: 'Azure Projects — Cloud Infrastructure',
 		contextFr: '2025 · Projets école · Infrastructure Cloud',
@@ -198,6 +201,7 @@ export const projects: Project[] = [
 		gradientFrom: '#0d1117',
 		gradientTo: '#1a2234',
 		image: '/img/projects/luxeshop-banner.png',
+		detailImage: '/img/projects/luxeshop-banner.png',
 		titleFr: 'Luxe Shop — E-commerce Fullstack',
 		titleEn: 'Luxe Shop — Fullstack E-commerce',
 		contextFr: 'Février 2026 · Projet école · Développement Fullstack',
@@ -272,6 +276,7 @@ export const projects: Project[] = [
 		gradientFrom: '#3d000d',
 		gradientTo: '#a22846',
 		image: '/img/projects/Powered-by-Raspberry-Pi-Logo.webp',
+		detailImage: '/img/projects/iot-detail-banner.jpg',
 		titleFr: 'Hackathon IoT — Raspberry Pi + Python',
 		titleEn: 'IoT Hackathon — Raspberry Pi + Python',
 		contextFr: 'Mars 2025 · 1 semaine · Hackathon',
@@ -321,6 +326,7 @@ export const projects: Project[] = [
 		gradientFrom: '#12192e',
 		gradientTo: '#2d4580',
 		image: '/img/projects/vmware-esxi.avif',
+		detailImage: '/img/projects/vmware-esxi.avif',
 		titleFr: 'Administration VMware vSphere/ESXi',
 		titleEn: 'VMware vSphere/ESXi Administration',
 		contextFr: '2025 · Projet école · Infrastructure & Virtualisation · Équipe de 5',
