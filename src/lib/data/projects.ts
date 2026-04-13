@@ -1,6 +1,5 @@
 export type ProjectCategory = 'infrastructure' | 'cybersecurity' | 'web' | 'iot';
 export type ProjectLevel = 'beginner' | 'intermediate' | 'confident';
-export type TechIcon = 'wazuh' | 'azure' | 'raspberry' | 'vmware' | 'laravel';
 
 export interface ProjectLink {
 	labelFr: string;
@@ -21,7 +20,6 @@ export interface Project {
 	featured: boolean;
 	gradientFrom: string;
 	gradientTo: string;
-	icon?: TechIcon;
 	image?: string;
 	titleFr: string;
 	titleEn: string;
@@ -49,7 +47,7 @@ export const projects: Project[] = [
 		featured: true,
 		gradientFrom: '#0a1628',
 		gradientTo: '#1a3a6b',
-		icon: 'wazuh',
+		image: '/img/projects/Wazuh_Logo.webp',
 		titleFr: 'Wazuh SIEM — Cybersécurité',
 		titleEn: 'Wazuh SIEM — Cybersecurity',
 		contextFr: 'Juin 2025 · 2 semaines · Hackathon',
@@ -123,7 +121,7 @@ export const projects: Project[] = [
 		featured: true,
 		gradientFrom: '#003065',
 		gradientTo: '#0078d4',
-		icon: 'azure',
+		image: '/img/projects/Microsoft_Azure.jpg',
 		titleFr: 'Projets Azure — Infrastructure Cloud',
 		titleEn: 'Azure Projects — Cloud Infrastructure',
 		contextFr: '2025 · Projets école · Infrastructure Cloud',
@@ -199,7 +197,6 @@ export const projects: Project[] = [
 		featured: true,
 		gradientFrom: '#0d1117',
 		gradientTo: '#1a2234',
-		icon: 'laravel',
 		image: '/img/projects/luxeshop-banner.png',
 		titleFr: 'Luxe Shop — E-commerce Fullstack',
 		titleEn: 'Luxe Shop — Fullstack E-commerce',
@@ -274,7 +271,7 @@ export const projects: Project[] = [
 		featured: false,
 		gradientFrom: '#3d000d',
 		gradientTo: '#a22846',
-		icon: 'raspberry',
+		image: '/img/projects/Powered-by-Raspberry-Pi-Logo.webp',
 		titleFr: 'Hackathon IoT — Raspberry Pi + Python',
 		titleEn: 'IoT Hackathon — Raspberry Pi + Python',
 		contextFr: 'Mars 2025 · 1 semaine · Hackathon',
@@ -323,49 +320,73 @@ export const projects: Project[] = [
 		featured: false,
 		gradientFrom: '#12192e',
 		gradientTo: '#2d4580',
-		icon: 'vmware',
-		titleFr: 'Administration VMware ESXi',
-		titleEn: 'VMware ESXi Administration',
-		contextFr: '2024 · Projet école · Infrastructure & Virtualisation',
-		contextEn: '2024 · School project · Infrastructure & Virtualization',
+		image: '/img/projects/vmware-esxi.avif',
+		titleFr: 'Administration VMware vSphere/ESXi',
+		titleEn: 'VMware vSphere/ESXi Administration',
+		contextFr: '2025 · Projet école · Infrastructure & Virtualisation · Équipe de 5',
+		contextEn: '2025 · School project · Infrastructure & Virtualization · Team of 5',
 		summaryFr:
-			"Installation d'un hyperviseur VMware ESXi bare-metal, puis déploiement et administration de VMs Windows Server (AD DS) et Ubuntu (Apache).",
+			"Mise en place d'une infrastructure VMware vSphere/ESXi complète : 2 nœuds ESXi sur matériel physique, cluster vCenter, stockage partagé iSCSI, et activation des fonctionnalités enterprise HA, DRS et vMotion.",
 		summaryEn:
-			'Bare-metal VMware ESXi hypervisor installation, then deployment and administration of Windows Server (AD DS) and Ubuntu (Apache) VMs.',
+			'Deployment of a complete VMware vSphere/ESXi infrastructure: 2 ESXi nodes on physical hardware, vCenter cluster, iSCSI shared storage, and activation of enterprise features HA, DRS and vMotion.',
 		bulletsFr: [
-			'Installé et configuré un hyperviseur VMware ESXi sur serveur physique',
-			'Déployé et administré des VMs Windows Server et Ubuntu (AD DS, Apache)'
+			'Infrastructure 2 nœuds ESXi + cluster vCenter + stockage partagé iSCSI',
+			'Activation HA, DRS, vMotion + création VMs Windows Server & Ubuntu + snapshots'
 		],
 		bulletsEn: [
-			'Installed and configured a VMware ESXi hypervisor on physical server',
-			'Deployed and administered Windows Server and Ubuntu VMs (AD DS, Apache)'
+			'2-node ESXi infrastructure + vCenter cluster + iSCSI shared storage',
+			'HA, DRS, vMotion activation + Windows Server & Ubuntu VM creation + snapshots'
 		],
 		highlightsFr: [
-			'Installation ESXi bare-metal + configuration réseau (vSwitch, port groups)',
-			'VM Windows Server avec Active Directory Domain Services',
-			'VM Ubuntu Server avec serveur web Apache',
-			'Administration via vSphere Client : snapshots, monitoring, datastores'
+			"Analyse des besoins et choix de l'hyperviseur parmi Proxmox, Hyper-V, RHEV et VMware vSphere/ESXi",
+			'Installation de 2 hôtes ESXi sur matériel physique + configuration réseau (vmnic, vSwitch, port groups)',
+			'Déploiement vCenter Server Appliance (VCSA) + cible iSCSI StarWind pour le stockage partagé + résolution DNS',
+			'Activation des fonctionnalités enterprise : cluster HA (haute disponibilité), DRS (équilibrage de charge) et vMotion (migration à chaud)',
+			'Création de VMs Windows Server et Ubuntu + gestion des snapshots, templates et clones',
+			'Monitoring et résolution de problèmes terrain : RAID, connectivité iSCSI, réseau, configuration du cluster'
 		],
 		highlightsEn: [
-			'Bare-metal ESXi install + network setup (vSwitch, port groups)',
-			'Windows Server VM with Active Directory Domain Services',
-			'Ubuntu Server VM with Apache web server',
-			'vSphere Client administration: snapshots, monitoring, datastores'
+			'Requirements analysis and hypervisor selection between Proxmox, Hyper-V, RHEV and VMware vSphere/ESXi',
+			'Installation of 2 ESXi hosts on physical hardware + network setup (vmnic, vSwitch, port groups)',
+			'vCenter Server Appliance (VCSA) deployment + StarWind iSCSI target for shared storage + DNS resolution',
+			'Enterprise feature activation: HA cluster (high availability), DRS (load balancing) and vMotion (live migration)',
+			'Windows Server and Ubuntu VM creation + snapshot, template and clone management',
+			'Monitoring and field troubleshooting: RAID, iSCSI connectivity, networking, cluster configuration'
 		],
 		stack: [
-			{ layerFr: 'Hyperviseur', layerEn: 'Hypervisor', tech: 'VMware ESXi 7.x / 8.x' },
-			{ layerFr: 'Client de gestion', layerEn: 'Management client', tech: 'vSphere Client (Web)' },
-			{ layerFr: 'VM 1', layerEn: 'VM 1', tech: 'Windows Server 2019 / 2022' },
-			{ layerFr: 'VM 2', layerEn: 'VM 2', tech: 'Ubuntu Server 22.04 LTS' },
-			{ layerFr: 'Réseau', layerEn: 'Network', tech: 'vSwitch, Port Groups, VLAN' },
-			{ layerFr: 'Stockage', layerEn: 'Storage', tech: 'Datastore local (VMFS)' }
+			{ layerFr: 'Hyperviseur', layerEn: 'Hypervisor', tech: 'VMware ESXi 8' },
+			{ layerFr: 'Gestion centralisée', layerEn: 'Central management', tech: 'vCenter Server Appliance (VCSA)' },
+			{ layerFr: 'Haute disponibilité', layerEn: 'High availability', tech: 'vSphere HA' },
+			{ layerFr: 'Équilibrage de charge', layerEn: 'Load balancing', tech: 'vSphere DRS' },
+			{ layerFr: 'Migration à chaud', layerEn: 'Live migration', tech: 'vMotion' },
+			{ layerFr: 'Stockage partagé', layerEn: 'Shared storage', tech: 'iSCSI (StarWind Virtual SAN)' },
+			{ layerFr: 'VMs', layerEn: 'VMs', tech: 'Windows Server + Ubuntu Server' },
+			{ layerFr: 'Réseau', layerEn: 'Networking', tech: 'vmnic, vSwitch, port groups, DNS' }
 		],
-		sidebarTags: ['VMware ESXi', 'vSphere', 'Windows Server', 'Ubuntu', 'Active Directory', 'Apache'],
-		infoFr: ['2024', 'Projet école', 'Infrastructure & Virtualisation', 'Geneva Institute of Technology'],
-		infoEn: ['2024', 'School project', 'Infrastructure & Virtualization', 'Geneva Institute of Technology'],
-		tags: ['VMware ESXi', 'Windows Server', 'Ubuntu'],
+		sidebarTags: [
+			'VMware ESXi 8',
+			'vCenter',
+			'vSphere',
+			'HA',
+			'DRS',
+			'vMotion',
+			'iSCSI',
+			'StarWind',
+			'Windows Server',
+			'Ubuntu'
+		],
+		infoFr: ['2025', 'Projet école', 'Équipe de 5', 'Geneva Institute of Technology'],
+		infoEn: ['2025', 'School project', 'Team of 5', 'Geneva Institute of Technology'],
+		tags: ['VMware ESXi', 'vCenter', 'vSphere', 'HA', 'vMotion', 'iSCSI'],
 		tagColor: 'violet',
-		links: []
+		links: [
+			{
+				labelFr: 'Guide complet HackMD',
+				labelEn: 'Full HackMD Guide',
+				href: 'https://hackmd.io/@1lZKDAoOSziryswPJhllxg/H1NmEli2Wg',
+				icon: 'doc'
+			}
+		]
 	}
 ];
 

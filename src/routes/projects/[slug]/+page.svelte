@@ -3,7 +3,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { langStore } from '$lib/stores/lang.svelte';
-	import TechLogo from '$lib/components/ui/TechLogo.svelte';
 
 	let { data } = $props();
 	const project = $derived(data.project);
@@ -29,6 +28,16 @@
 		class="case-header"
 		style="background: linear-gradient(135deg, {project.gradientFrom} 0%, {project.gradientTo} 100%);"
 	>
+		{#if project.image}
+			<img
+				src="{base}{project.image}"
+				alt=""
+				class="case-header-bg"
+				aria-hidden="true"
+				loading="eager"
+				decoding="async"
+			/>
+		{/if}
 		<div class="container case-header-inner">
 			<a href="{base}/projects" class="case-back">
 				← {isFr ? 'Retour aux projets' : 'Back to projects'}
@@ -43,12 +52,6 @@
 					<p class="case-context">{isFr ? project.contextFr : project.contextEn}</p>
 					<p class="case-summary">{isFr ? project.summaryFr : project.summaryEn}</p>
 				</div>
-
-				{#if project.icon}
-					<div class="case-header-logo" aria-hidden="true">
-						<TechLogo icon={project.icon} size={140} />
-					</div>
-				{/if}
 			</div>
 		</div>
 	</header>
@@ -164,17 +167,31 @@
 		overflow: hidden;
 	}
 
+	.case-header-bg {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		opacity: 0.35;
+		pointer-events: none;
+	}
+
 	.case-header::before {
 		content: '';
 		position: absolute;
 		inset: 0;
-		background: radial-gradient(ellipse 90% 70% at 50% 100%, rgba(5, 8, 16, 0.65) 40%, transparent 100%);
+		background:
+			linear-gradient(180deg, rgba(5, 8, 16, 0.25) 0%, rgba(5, 8, 16, 0.7) 100%),
+			radial-gradient(ellipse 90% 70% at 50% 100%, rgba(5, 8, 16, 0.65) 40%, transparent 100%);
 		pointer-events: none;
+		z-index: 1;
 	}
 
 	.case-header-inner {
 		position: relative;
-		z-index: 1;
+		z-index: 2;
 	}
 
 	.case-back {
@@ -193,7 +210,7 @@
 
 	.case-header-grid {
 		display: grid;
-		grid-template-columns: 1fr auto;
+		grid-template-columns: 1fr;
 		gap: var(--sp-8);
 		align-items: center;
 	}
@@ -226,11 +243,6 @@
 		color: rgba(255, 255, 255, 0.85);
 		max-width: 640px;
 		line-height: 1.6;
-	}
-
-	.case-header-logo {
-		color: rgba(255, 255, 255, 0.75);
-		filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.35));
 	}
 
 	/* BODY */
@@ -402,10 +414,6 @@
 
 		.case-header-grid {
 			grid-template-columns: 1fr;
-		}
-
-		.case-header-logo {
-			display: none;
 		}
 
 		.case-sidebar {

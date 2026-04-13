@@ -5,7 +5,6 @@
 	import { langStore } from '$lib/stores/lang.svelte';
 	import { t } from '$lib/data/translations';
 	import { featuredProjects } from '$lib/data/projects';
-	import TechLogo from '$lib/components/ui/TechLogo.svelte';
 
 	const isFr = $derived(langStore.isFr);
 	const p = t.projects;
@@ -42,10 +41,6 @@
 								loading="lazy"
 								decoding="async"
 							/>
-						{:else if project.icon}
-							<div class="project-banner-logo">
-								<TechLogo icon={project.icon} size={72} />
-							</div>
 						{/if}
 						<span class="project-category-badge category-{project.category}">
 							{project.category}
@@ -174,17 +169,6 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
-	}
-
-	.project-banner-logo {
-		position: absolute;
-		inset: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: rgba(255, 255, 255, 0.85);
-		filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.5));
-		opacity: 0.9;
 	}
 
 	.project-category-badge {

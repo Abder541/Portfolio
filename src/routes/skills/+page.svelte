@@ -33,7 +33,7 @@
 	const languages = [
 		{ flag: '🇫🇷', nameFr: 'Français', nameEn: 'French', levelFr: 'Langue maternelle — C2', levelEn: 'Native language — C2' },
 		{ flag: '🇬🇧', nameFr: 'Anglais', nameEn: 'English', levelFr: 'B1 — Lecture tech + communication basique', levelEn: 'B1 — Tech reading + basic communication' },
-		{ flag: '🇩🇪', nameFr: 'Allemand', nameEn: 'German', levelFr: 'A2 — Notions de base', levelEn: 'A2 — Basic knowledge' }
+		{ flag: '🇩🇪', nameFr: 'Allemand', nameEn: 'German', levelFr: 'B1 — Notions de base', levelEn: 'B1 — Basic knowledge' }
 	];
 </script>
 
