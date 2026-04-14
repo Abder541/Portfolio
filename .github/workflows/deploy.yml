@@ -1,11 +1,12 @@
 # GitHub Actions — Déploiement automatique sur GitHub Pages
-# Déclenché sur chaque push vers la branche v2
+# Déclenché sur chaque push vers la branche main + manuellement via l'onglet Actions
 # Build SvelteKit (adapter-static) → publie le dossier build/ sur gh-pages
 
 name: Deploy to GitHub Pages
 
 on:
-  # Déclenchement manuel uniquement depuis l'onglet Actions
+  push:
+    branches: [main]
   workflow_dispatch:
 
 # Autorisations nécessaires pour pousser sur gh-pages
