@@ -21,6 +21,7 @@ export interface Project {
 	gradientFrom: string;
 	gradientTo: string;
 	image?: string;
+	imageContain?: boolean;
 	detailImage?: string;
 	titleFr: string;
 	titleEn: string;
@@ -276,6 +277,7 @@ export const projects: Project[] = [
 		gradientFrom: '#3d000d',
 		gradientTo: '#a22846',
 		image: '/img/projects/Powered-by-Raspberry-Pi-Logo.webp',
+		imageContain: true,
 		detailImage: '/img/projects/iot-detail-banner.jpg',
 		titleFr: 'Hackathon IoT — Raspberry Pi + Python',
 		titleEn: 'IoT Hackathon — Raspberry Pi + Python',

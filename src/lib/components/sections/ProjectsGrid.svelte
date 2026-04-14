@@ -38,6 +38,7 @@
 								src="{base}{project.image}"
 								alt=""
 								class="project-banner-img"
+								style="object-fit: {project.imageContain ? 'contain' : 'cover'}; padding: {project.imageContain ? '8px' : '0'};"
 								loading="lazy"
 								decoding="async"
 							/>
