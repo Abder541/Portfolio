@@ -30,7 +30,7 @@
 					<!-- Banner : image si disponible, sinon gradient + logo techno -->
 					<div
 						class="project-banner"
-						style="background: linear-gradient(135deg, {project.gradientFrom} 0%, {project.gradientTo} 100%);"
+						style="--card-from: {project.gradientFrom}; --card-to: {project.gradientTo};"
 						aria-hidden="true"
 					>
 						{#if project.image}
@@ -156,28 +156,25 @@
 	.project-banner {
 		height: 140px;
 		position: relative;
-		display: flex;
-		align-items: flex-end;
-		padding: var(--sp-3);
 		overflow: hidden;
+		background: linear-gradient(135deg, var(--card-from), var(--card-to));
 	}
 
 	.project-banner-img {
 		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		margin: auto;
-		width: auto;
-		height: auto;
-		max-width: calc(100% - 48px);
-		max-height: calc(100% - 40px);
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
 		display: block;
 	}
 
 	.project-category-badge {
-		position: relative;
+		position: absolute;
+		bottom: var(--sp-3);
+		left: var(--sp-3);
+		z-index: 2;
 		font-family: var(--font-mono);
 		font-size: 0.65rem;
 		text-transform: uppercase;
