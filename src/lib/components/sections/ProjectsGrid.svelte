@@ -164,11 +164,16 @@
 
 	.project-banner-img {
 		position: absolute;
-		inset: 12px;
-		width: calc(100% - 24px);
-		height: calc(100% - 24px);
-		object-fit: contain;
-		object-position: center;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		width: auto;
+		height: auto;
+		max-width: calc(100% - 48px);
+		max-height: calc(100% - 40px);
+		display: block;
 	}
 
 	.project-category-badge {
