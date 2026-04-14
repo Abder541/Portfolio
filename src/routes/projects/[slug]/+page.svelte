@@ -28,33 +28,35 @@
 		class="case-header"
 		style="background: linear-gradient(135deg, {project.gradientFrom} 0%, {project.gradientTo} 100%);"
 	>
-		{#if project.detailImage}
-			<div
-				class="case-header-visual"
-				style="--detail-blend-color: {project.gradientFrom};"
-			>
-				<img
-					src="{base}{project.detailImage}"
-					alt={isFr ? project.titleFr : project.titleEn}
-					class="case-header-img"
-					loading="eager"
-					decoding="async"
-				/>
-			</div>
-		{/if}
-
 		<div class="container case-header-inner">
 			<a href="{base}/projects" class="case-back">
 				← {isFr ? 'Retour aux projets' : 'Back to projects'}
 			</a>
 
-			<div class="case-header-text">
-				<span class="case-category badge badge-sm badge-{project.tagColor}">
-					{isFr ? categoryLabels[project.category].fr : categoryLabels[project.category].en}
-				</span>
-				<h1 class="case-title">{isFr ? project.titleFr : project.titleEn}</h1>
-				<p class="case-context">{isFr ? project.contextFr : project.contextEn}</p>
-				<p class="case-summary">{isFr ? project.summaryFr : project.summaryEn}</p>
+			<div class="case-header-grid">
+				<div class="case-header-text">
+					<span class="case-category badge badge-sm badge-{project.tagColor}">
+						{isFr ? categoryLabels[project.category].fr : categoryLabels[project.category].en}
+					</span>
+					<h1 class="case-title">{isFr ? project.titleFr : project.titleEn}</h1>
+					<p class="case-context">{isFr ? project.contextFr : project.contextEn}</p>
+					<p class="case-summary">{isFr ? project.summaryFr : project.summaryEn}</p>
+				</div>
+
+				{#if project.detailImage}
+					<div
+						class="case-header-visual"
+						style="--detail-blend-color: {project.gradientFrom};"
+					>
+						<img
+							src="{base}{project.detailImage}"
+							alt={isFr ? project.titleFr : project.titleEn}
+							class="case-header-img"
+							loading="eager"
+							decoding="async"
+						/>
+					</div>
+				{/if}
 			</div>
 		</div>
 	</header>
@@ -164,7 +166,6 @@
 
 <style>
 	.case-header {
-		position: relative;
 		padding: calc(var(--nav-height) + var(--sp-12)) 0 var(--sp-16);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 		overflow: hidden;
@@ -172,7 +173,6 @@
 
 	.case-header-inner {
 		position: relative;
-		z-index: 2;
 	}
 
 	.case-back {
@@ -189,10 +189,18 @@
 		color: #fff;
 	}
 
+	.case-header-grid {
+		display: grid;
+		grid-template-columns: 1fr 40%;
+		gap: var(--sp-10);
+		align-items: stretch;
+		min-height: 340px;
+	}
+
 	.case-header-text {
 		display: flex;
 		flex-direction: column;
-		max-width: 55%;
+		justify-content: center;
 	}
 
 	.case-category {
@@ -225,14 +233,12 @@
 		line-height: 1.6;
 	}
 
-	/* RIGHT panel — full-height absolutely-positioned detail banner */
+	/* RIGHT column — full-height detail banner image */
 	.case-header-visual {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: 45%;
+		position: relative;
+		padding: 0;
 		overflow: hidden;
+		border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
 	}
 
 	.case-header-visual::after {
@@ -242,7 +248,7 @@
 		background: linear-gradient(
 			to right,
 			var(--detail-blend-color, transparent) 0%,
-			transparent 50%
+			transparent 40%
 		);
 		z-index: 1;
 		pointer-events: none;
@@ -255,7 +261,6 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
-		display: block;
 	}
 
 	/* BODY */
@@ -425,15 +430,14 @@
 			grid-template-columns: 1fr;
 		}
 
-		.case-header-visual {
-			position: relative;
-			width: 100%;
-			height: 220px;
-			margin-top: var(--sp-6);
+		.case-header-grid {
+			grid-template-columns: 1fr;
+			min-height: auto;
 		}
 
-		.case-header-text {
-			max-width: 100%;
+		.case-header-visual {
+			height: 220px;
+			border-radius: var(--radius-md);
 		}
 
 		.case-sidebar {
